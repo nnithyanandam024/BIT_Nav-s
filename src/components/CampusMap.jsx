@@ -12,7 +12,8 @@ import {
   AlertCircle,
   X,
   FastForward,
-  MapPin
+  MapPin,
+  Globe
 } from 'lucide-react';
 import campusData from '../data/campusData.json';
 import {
@@ -35,6 +36,8 @@ const DEFAULT_CENTER_Y = 1950;
 
 export default function CampusMap({
   isSatellite,
+  onToggleSatellite,
+  showPathways = true,
   landmarks = [],
   selectedCategory,
   activeRoute,
@@ -572,23 +575,24 @@ export default function CampusMap({
         transformOrigin: '0 0',
         transition: isDragging ? 'none' : 'transform 0.12s ease-out'
       }}>
-        {/* Layer 1: High-Resolution Physical Campus Map from Findmyway */}
+        {/* Layer 1: High-Resolution Physical Campus Map OR Satellite Aerial View */}
         <img
-          src="/map/campus_map.png"
-          alt="BIT Campus Physical Map"
+          src={isSatellite ? "/map/campus_map_2.png" : "/map/campus_map.png"}
+          alt={isSatellite ? "BIT Campus Satellite Aerial View" : "BIT Campus Physical Map"}
           style={{
             position: 'absolute',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'contain',
-            pointerEvents: 'none'
+            objectFit: 'fill',
+            pointerEvents: 'none',
+            filter: isSatellite ? 'contrast(1.06) brightness(0.96)' : 'none'
           }}
         />
 
-        {/* Layer 2: Physical Road Paths Overlay from Findmyway */}
-        {isSatellite && (
+        {/* Layer 2: Physical Road Paths Overlay */}
+        {showPathways && (
           <img
             src="/map/paths.png"
             alt="BIT Campus Physical Paths"
@@ -598,9 +602,10 @@ export default function CampusMap({
               left: 0,
               width: '100%',
               height: '100%',
-              objectFit: 'contain',
-              opacity: 0.85,
-              pointerEvents: 'none'
+              objectFit: 'fill',
+              opacity: isSatellite ? 0.9 : 0.85,
+              pointerEvents: 'none',
+              mixBlendMode: isSatellite ? 'screen' : 'normal'
             }}
           />
         )}
@@ -1039,6 +1044,16 @@ export default function CampusMap({
             <Navigation size={16} />
           </button>
         )}
+
+        {/* Satellite Aerial View Toggle */}
+        <button
+          onClick={onToggleSatellite}
+          className={`minimal-btn ${isSatellite ? 'active' : ''}`}
+          title={isSatellite ? "Switch to Standard Campus Map" : "Switch to Satellite Aerial View"}
+          style={{ width: 38, height: 38, padding: 0 }}
+        >
+          <Globe size={16} />
+        </button>
 
         {/* Reset to Academic Complex */}
         <button

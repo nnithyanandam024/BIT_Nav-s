@@ -6,7 +6,8 @@ import {
   Volume2,
   VolumeX,
   Settings,
-  X
+  X,
+  Globe
 } from 'lucide-react';
 
 export default function Navbar({
@@ -14,6 +15,8 @@ export default function Navbar({
   onSelectPlace,
   isSatellite,
   onToggleSatellite,
+  showPathways,
+  onTogglePathways,
   soundEnabled,
   onToggleSound,
   onOpenSettings
@@ -183,15 +186,27 @@ export default function Navbar({
 
       {/* Minimal Action Controls */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, pointerEvents: 'auto' }}>
-        {/* Toggle Pathways Overlay */}
+        {/* Satellite Aerial View Switcher */}
         <button
           onClick={onToggleSatellite}
           className={`minimal-btn ${isSatellite ? 'active' : ''}`}
-          title={isSatellite ? "Hide Pathways Overlay" : "Show Physical Pathways Overlay"}
+          title={isSatellite ? "Switch to Standard Physical Map" : "Switch to Satellite Aerial View"}
+        >
+          <Globe size={15} />
+          <span className="desktop-only">
+            {isSatellite ? 'Satellite' : 'Map'}
+          </span>
+        </button>
+
+        {/* Toggle Pathways Overlay */}
+        <button
+          onClick={onTogglePathways}
+          className={`minimal-btn ${showPathways ? 'active' : ''}`}
+          title={showPathways ? "Hide Pathways Overlay" : "Show Physical Pathways Overlay"}
         >
           <Layers size={15} />
           <span className="desktop-only">
-            {isSatellite ? 'Pathways' : 'Physical'}
+            Pathways
           </span>
         </button>
 

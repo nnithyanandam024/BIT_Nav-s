@@ -18,7 +18,8 @@ import { processNaturalLanguageQuery } from './services/nlpEngine';
 export default function App() {
   const [landmarks, setLandmarks] = useState(campusData.landmarks);
 
-  const [isSatellite, setIsSatellite] = useState(true); // default to showing paths overlay
+  const [isSatellite, setIsSatellite] = useState(false); // Satellite aerial imagery view
+  const [showPathways, setShowPathways] = useState(true); // Road pathways overlay
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -221,6 +222,8 @@ export default function App() {
         }}
         isSatellite={isSatellite}
         onToggleSatellite={() => setIsSatellite(!isSatellite)}
+        showPathways={showPathways}
+        onTogglePathways={() => setShowPathways(!showPathways)}
         soundEnabled={soundEnabled}
         onToggleSound={() => setSoundEnabled(!soundEnabled)}
         onOpenSettings={() => setIsSettingsOpen(true)}
@@ -232,9 +235,12 @@ export default function App() {
         onSelectCategory={setSelectedCategory}
       />
 
-      {/* Interactive Campus Map Canvas with Findmyway Physical Map */}
+      {/* Interactive Campus Map Canvas with Findmyway Physical Map & Satellite View */}
       <CampusMap
         isSatellite={isSatellite}
+        onToggleSatellite={() => setIsSatellite(!isSatellite)}
+        showPathways={showPathways}
+        onTogglePathways={() => setShowPathways(!showPathways)}
         landmarks={landmarks}
         selectedCategory={selectedCategory}
         activeRoute={activeRoute}
