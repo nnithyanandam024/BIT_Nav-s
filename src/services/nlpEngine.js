@@ -21,7 +21,43 @@ export async function processNaturalLanguageQuery(query, landmarks, apiKey = nul
   return localSemanticParse(trimmed, landmarks, chatHistory);
 }
 
-// Call Google Gemini API (Gemini 2.5 Flash)
+// Test Gemini API Key connectivity
+export async function testGeminiApiKey(apiKey) {
+  if (!apiKey || !apiKey.trim()) return { success: false, message: 'Please enter an API key.' };
+  const key = apiKey.trim();
+  const models = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro'];
+  let lastErr = null;
+
+  for (const model of models) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ role: 'user', parts: [{ text: 'ping' }] }]
+        })
+      });
+      if (res.ok) {
+        return { success: true, message: `Connected to Google Gemini (${model}) successfully!`, model };
+      }
+      const text = await res.text();
+      let msg = `HTTP ${res.status}`;
+      try {
+        const parsed = JSON.parse(text);
+        if (parsed.error?.message) msg = parsed.error.message;
+      } catch {}
+      lastErr = msg;
+      if (res.status === 404) continue;
+      return { success: false, message: msg };
+    } catch (err) {
+      lastErr = err.message;
+    }
+  }
+  return { success: false, message: lastErr || 'Connection failed' };
+}
+
+// Call Google Gemini API with fallback across standard models
 async function callGeminiLLM(query, landmarks, apiKey, chatHistory = []) {
   // Compress landmarks for lightweight prompt context
   const landmarkSummary = landmarks.map(l => ({
@@ -63,7 +99,7 @@ Analyze the user's message in context of previous messages and return a single v
   const contents = [];
   
   // Append recent chat history (up to last 6 turns)
-  const recentHistory = chatHistory.slice(-6);
+  const recentHistory = (chatHistory || []).slice(-6);
   for (const msg of recentHistory) {
     if (msg.role === 'user') {
       contents.push({ role: 'user', parts: [{ text: msg.text }] });
@@ -75,41 +111,63 @@ Analyze the user's message in context of previous messages and return a single v
   // Current user query
   contents.push({ role: 'user', parts: [{ text: query }] });
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+  const candidateModels = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro'];
+  let lastError = null;
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents,
-      systemInstruction: { parts: [{ text: systemInstruction }] },
-      generationConfig: {
-        responseMimeType: 'application/json',
-        temperature: 0.2
+  for (const model of candidateModels) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey.trim()}`;
+
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents,
+          systemInstruction: { parts: [{ text: systemInstruction }] },
+          generationConfig: {
+            responseMimeType: 'application/json',
+            temperature: 0.2
+          }
+        })
+      });
+
+      if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`HTTP ${response.status}: ${errText}`);
       }
-    })
-  });
 
-  if (!response.ok) {
-    throw new Error(`Gemini HTTP ${response.status}: ${await response.text()}`);
+      const data = await response.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!text) throw new Error('Empty Gemini response');
+
+      let cleaned = text.trim();
+      if (cleaned.startsWith('```json')) cleaned = cleaned.slice(7);
+      else if (cleaned.startsWith('```')) cleaned = cleaned.slice(3);
+      if (cleaned.endsWith('```')) cleaned = cleaned.slice(0, -3);
+      cleaned = cleaned.trim();
+
+      const parsed = JSON.parse(cleaned);
+      parsed.engine = `Google Gemini (${model})`;
+
+      // Attach matched landmark objects if IDs present
+      if (parsed.source) {
+        parsed.sourcePlace = landmarks.find(l => l.id === parsed.source) || null;
+      }
+      if (parsed.destination) {
+        parsed.destPlace = landmarks.find(l => l.id === parsed.destination) || null;
+      }
+
+      return parsed;
+    } catch (err) {
+      lastError = err;
+      if (err.message && err.message.includes('404')) {
+        continue;
+      }
+      throw err;
+    }
   }
 
-  const data = await response.json();
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) throw new Error('Empty Gemini response');
-
-  const parsed = JSON.parse(text);
-  parsed.engine = 'Google Gemini 2.5 Flash';
-
-  // Attach matched landmark objects if IDs present
-  if (parsed.source) {
-    parsed.sourcePlace = landmarks.find(l => l.id === parsed.source) || null;
-  }
-  if (parsed.destination) {
-    parsed.destPlace = landmarks.find(l => l.id === parsed.destination) || null;
-  }
-
-  return parsed;
+  throw lastError || new Error('Failed to reach Gemini API');
 }
 
 // Local Semantic NLP Parser with 385 Rooms/Labs RAG & Multi-Turn Context

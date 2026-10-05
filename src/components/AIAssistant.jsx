@@ -18,8 +18,13 @@ import {
   Building,
   Compass,
   Play,
-  Sparkles
+  Sparkles,
+  Key,
+  CheckCircle2,
+  AlertCircle,
+  RefreshCw
 } from 'lucide-react';
+import { testGeminiApiKey } from '../services/nlpEngine';
 
 const SAMPLE_PROMPTS = [
   "Where is Mechatronics Lab?",
@@ -34,9 +39,13 @@ export default function AIAssistant({
   landmarks,
   activeRoute,
   onCalculateRoute,
+  onCalculateNearest,
   onClearRoute,
   onProcessAIQuery,
   soundEnabled,
+  apiKey,
+  onSaveApiKey,
+  onOpenSettings,
   isOpen,
   onToggleOpen
 }) {
@@ -54,6 +63,11 @@ export default function AIAssistant({
   const [isListening, setIsListening] = useState(false);
   const [manualFrom, setManualFrom] = useState('as-main-left');
   const [manualTo, setManualTo] = useState('main-auditorium');
+
+  const [showKeyBar, setShowKeyBar] = useState(false);
+  const [inlineKey, setInlineKey] = useState('');
+  const [isInlineTesting, setIsInlineTesting] = useState(false);
+  const [inlineStatus, setInlineStatus] = useState(null);
 
   const messagesEndRef = useRef(null);
   const recognitionRef = useRef(null);
@@ -112,9 +126,65 @@ export default function AIAssistant({
     window.speechSynthesis.speak(utterance);
   };
 
+  const handleInlineSaveAndTest = async () => {
+    if (!inlineKey.trim()) return;
+    setIsInlineTesting(true);
+    setInlineStatus(null);
+    try {
+      const res = await testGeminiApiKey(inlineKey.trim());
+      setInlineStatus(res);
+      if (res.success && onSaveApiKey) {
+        onSaveApiKey(inlineKey.trim());
+        setInlineKey('');
+        setTimeout(() => setShowKeyBar(false), 1600);
+      }
+    } catch (err) {
+      setInlineStatus({ success: false, message: err.message || 'Test failed' });
+    } finally {
+      setIsInlineTesting(false);
+    }
+  };
+
   const handleSend = async (queryText = inputQuery) => {
     const query = (queryText || '').trim();
     if (!query || isLoading) return;
+
+    // Direct Gemini API Key Detection (e.g. AIzaSy... or long key string pasted into chat)
+    const clean = query.trim();
+    const isApiKey = clean.startsWith('AIza') || (clean.length >= 35 && !clean.includes(' ') && /^[A-Za-z0-9_-]+$/.test(clean));
+    if (isApiKey) {
+      setInputQuery('');
+      setIsLoading(true);
+      const masked = clean.length > 10 ? `${clean.slice(0, 6)}...${clean.slice(-4)}` : '***';
+      const userMsg = {
+        id: Date.now().toString(),
+        role: 'user',
+        text: `Saved API Key (${masked})`,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, userMsg]);
+
+      const testRes = await testGeminiApiKey(clean);
+      if (testRes.success) {
+        if (onSaveApiKey) onSaveApiKey(clean);
+        setMessages(prev => [...prev, {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          text: `Gemini API Key connected and activated!\n\n${testRes.message}\nGenerative AI reasoning is now live. Ask me any question like "Where is Mechatronics Lab?" or "Directions from Main Gate to Auditorium".`,
+          timestamp: new Date()
+        }]);
+      } else {
+        if (onSaveApiKey) onSaveApiKey(clean);
+        setMessages(prev => [...prev, {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          text: `Key saved to storage, but verification test returned: "${testRes.message}".\nPlease ensure your key is valid and Generative Language API is enabled in Google AI Studio.`,
+          timestamp: new Date()
+        }]);
+      }
+      setIsLoading(false);
+      return;
+    }
 
     setInputQuery('');
     const userMsg = {
@@ -131,18 +201,18 @@ export default function AIAssistant({
       const assistantMsg = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        text: result.aiParsed?.conversational_response || "Here is your navigation route.",
-        aiParsed: result.aiParsed,
-        routeResult: result.routeResult,
-        nearestResult: result.nearestResult,
-        matchingPlaces: result.matchingPlaces,
-        destinationPlace: result.routeResult?.to || result.aiParsed?.destPlace || null,
+        text: result?.aiParsed?.conversational_response || "Here is your navigation route.",
+        aiParsed: result?.aiParsed,
+        routeResult: result?.routeResult,
+        nearestResult: result?.nearestResult,
+        matchingPlaces: result?.matchingPlaces,
+        destinationPlace: result?.routeResult?.to || result?.aiParsed?.destPlace || null,
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, assistantMsg]);
 
-      if (result.routeResult) {
+      if (result?.routeResult) {
         speakInstruction(`Route to ${result.routeResult.to.name}. ${result.routeResult.route.totalDistance} meters, about ${result.routeResult.route.walkingMinutes} minutes walk.`);
       }
     } catch (err) {
@@ -215,8 +285,56 @@ export default function AIAssistant({
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', color: 'var(--text-secondary)' }}>
-          {isOpen ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          {apiKey ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onOpenSettings) onOpenSettings();
+              }}
+              className="minimal-btn"
+              style={{
+                padding: '2px 7px',
+                fontSize: '0.64rem',
+                color: '#10B981',
+                background: 'rgba(16, 185, 129, 0.12)',
+                border: '1px solid rgba(16, 185, 129, 0.25)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 4
+              }}
+              title="Google Gemini AI is active. Click to manage settings."
+            >
+              <Sparkles size={11} /> Gemini 1.5
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowKeyBar(!showKeyBar);
+              }}
+              className="minimal-btn"
+              style={{
+                padding: '2px 7px',
+                fontSize: '0.64rem',
+                color: 'var(--color-accent)',
+                background: 'rgba(92, 225, 230, 0.1)',
+                border: '1px solid rgba(92, 225, 230, 0.25)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 4
+              }}
+              title="Click to paste Gemini API key"
+            >
+              <Key size={11} /> Paste Key
+            </button>
+          )}
+
+          <div style={{ display: 'flex', alignItems: 'center', color: 'var(--text-secondary)' }}>
+            {isOpen ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+          </div>
         </div>
       </div>
 
@@ -314,6 +432,73 @@ export default function AIAssistant({
           {/* TAB 1: AI CHAT */}
           {activeTab === 'chat' && (
             <>
+              {(!apiKey || showKeyBar) && (
+                <div style={{
+                  margin: '8px 10px 0 10px',
+                  padding: '8px 10px',
+                  borderRadius: 'var(--radius-sm)',
+                  background: '#131D16',
+                  border: '1px solid var(--border-subtle)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 6
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.74rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+                      <Key size={13} color="var(--color-accent)" />
+                      <span>{apiKey ? 'Update Gemini API Key' : 'Paste Gemini Key (Optional)'}</span>
+                    </div>
+                    {apiKey && (
+                      <button
+                        onClick={() => setShowKeyBar(false)}
+                        style={{ color: 'var(--text-secondary)', background: 'transparent', border: 'none', cursor: 'pointer', padding: 2 }}
+                      >
+                        <X size={12} />
+                      </button>
+                    )}
+                  </div>
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    <input
+                      type="password"
+                      placeholder="Paste AIzaSy... here"
+                      value={inlineKey}
+                      onChange={(e) => {
+                        setInlineKey(e.target.value);
+                        setInlineStatus(null);
+                      }}
+                      style={{
+                        flex: 1,
+                        padding: '5px 8px',
+                        borderRadius: 'var(--radius-sm)',
+                        background: '#0D140F',
+                        border: '1px solid var(--border-subtle)',
+                        fontSize: '0.74rem',
+                        color: 'var(--text-primary)'
+                      }}
+                    />
+                    <button
+                      onClick={handleInlineSaveAndTest}
+                      disabled={isInlineTesting || !inlineKey.trim()}
+                      className="minimal-btn minimal-btn-primary"
+                      style={{ fontSize: '0.72rem', padding: '5px 10px', whiteSpace: 'nowrap' }}
+                    >
+                      {isInlineTesting ? 'Testing...' : 'Save & Test'}
+                    </button>
+                  </div>
+                  {inlineStatus && (
+                    <div style={{
+                      fontSize: '0.69rem',
+                      color: inlineStatus.success ? '#10B981' : '#FCA5A5',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 4
+                    }}>
+                      {inlineStatus.success ? <CheckCircle2 size={12} /> : <AlertCircle size={12} />}
+                      <span>{inlineStatus.message}</span>
+                    </div>
+                  )}
+                </div>
+              )}
               <div style={{
                 flex: 1,
                 overflowY: 'auto',

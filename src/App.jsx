@@ -18,8 +18,8 @@ import { processNaturalLanguageQuery } from './services/nlpEngine';
 export default function App() {
   const [landmarks, setLandmarks] = useState(campusData.landmarks);
 
-  const [isSatellite, setIsSatellite] = useState(false); // Satellite aerial imagery view
-  const [showPathways, setShowPathways] = useState(true); // Road pathways overlay
+  const [isSatellite, setIsSatellite] = useState(true); // Default: Satellite aerial view first
+  const [showPathways, setShowPathways] = useState(false); // Default: Pathway overlay off on initial load
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -30,13 +30,20 @@ export default function App() {
 
   const [isAssistantOpen, setIsAssistantOpen] = useState(true);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('gemini_api_key') || '');
+  const [apiKey, setApiKey] = useState(() => {
+    return localStorage.getItem('gemini_api_key') || (import.meta.env.VITE_GEMINI_API_KEY || '');
+  });
   const [accessibleRouting, setAccessibleRouting] = useState(false);
 
   // Save API key
   const handleSaveApiKey = (key) => {
-    setApiKey(key);
-    localStorage.setItem('gemini_api_key', key);
+    const cleanKey = (key || '').trim();
+    setApiKey(cleanKey);
+    if (cleanKey) {
+      localStorage.setItem('gemini_api_key', cleanKey);
+    } else {
+      localStorage.removeItem('gemini_api_key');
+    }
   };
 
   // Calculate Shortest Route between two places across physical campus road network
@@ -103,9 +110,10 @@ export default function App() {
     // Client-side fallback
     const result = findNearestFacility(from.id, facilityType, campusData.landmarks, campusData.graph, campusData.nodes, campusData.edgeMap);
     if (result) {
+      const campusRoute = calculateCampusRoute(result.source, result.target, campusData, landmarks);
       setStartPlace(from);
       setDestinationPlace(result.target);
-      setActiveRoute({
+      setActiveRoute(campusRoute || {
         from: result.source,
         to: result.target,
         route: result.route,
@@ -116,7 +124,7 @@ export default function App() {
   };
 
   // Natural Language Query Processor (Dual-Mode: Backend API or Client Engine)
-  const handleProcessAIQuery = async (query) => {
+  const handleProcessAIQuery = async (query, chatHistory = []) => {
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
@@ -157,10 +165,9 @@ export default function App() {
         matchingPlaces = [target];
         setSelectedPlace(target);
         const origin = startPlace || campusData.landmarks.find(l => l.id === 'as-main-left') || campusData.landmarks[0];
-        const route = dijkstra(origin.nearestNode, target.nearestNode, campusData.graph, campusData.nodes);
-        if (route) {
-          const turnByTurn = generateTurnByTurn(route.pathNodes, campusData.nodes, campusData.landmarks, origin, target);
-          routeResult = { from: origin, to: target, route, turnByTurn };
+        const campusRoute = calculateCampusRoute(origin, target, campusData, landmarks);
+        if (campusRoute) {
+          routeResult = campusRoute;
           setStartPlace(origin);
           setDestinationPlace(target);
           setActiveRoute(routeResult);
@@ -174,10 +181,9 @@ export default function App() {
       const to = campusData.landmarks.find(l => l.id === aiParsed.destination);
 
       if (from && to) {
-        const route = dijkstra(from.nearestNode, to.nearestNode, campusData.graph, campusData.nodes);
-        if (route) {
-          const turnByTurn = generateTurnByTurn(route.pathNodes, campusData.nodes, campusData.landmarks, from, to);
-          routeResult = { from, to, route, turnByTurn };
+        const campusRoute = calculateCampusRoute(from, to, campusData, landmarks);
+        if (campusRoute) {
+          routeResult = campusRoute;
           setStartPlace(from);
           setDestinationPlace(to);
           setActiveRoute(routeResult);
@@ -188,7 +194,8 @@ export default function App() {
       const type = aiParsed.facility_type || 'canteen';
       nearestResult = findNearestFacility(sourcePlaceObj.id, type, campusData.landmarks, campusData.graph, campusData.nodes);
       if (nearestResult) {
-        routeResult = {
+        const campusRoute = calculateCampusRoute(nearestResult.source, nearestResult.target, campusData, landmarks);
+        routeResult = campusRoute || {
           from: nearestResult.source,
           to: nearestResult.target,
           route: nearestResult.route,
@@ -204,10 +211,9 @@ export default function App() {
         matchingPlaces = [target];
         setSelectedPlace(target);
         const origin = startPlace || campusData.landmarks.find(l => l.id === 'as-main-left') || campusData.landmarks[0];
-        const route = dijkstra(origin.nearestNode, target.nearestNode, campusData.graph, campusData.nodes);
-        if (route) {
-          const turnByTurn = generateTurnByTurn(route.pathNodes, campusData.nodes, campusData.landmarks, origin, target);
-          routeResult = { from: origin, to: target, route, turnByTurn };
+        const campusRoute = calculateCampusRoute(origin, target, campusData, landmarks);
+        if (campusRoute) {
+          routeResult = campusRoute;
           setStartPlace(origin);
           setDestinationPlace(target);
           setActiveRoute(routeResult);
@@ -283,6 +289,8 @@ export default function App() {
         onProcessAIQuery={handleProcessAIQuery}
         soundEnabled={soundEnabled}
         apiKey={apiKey}
+        onSaveApiKey={handleSaveApiKey}
+        onOpenSettings={() => setIsSettingsOpen(true)}
         isOpen={isAssistantOpen}
         onToggleOpen={() => setIsAssistantOpen(!isAssistantOpen)}
       />

@@ -35,9 +35,9 @@ const DEFAULT_CENTER_X = 1680;
 const DEFAULT_CENTER_Y = 1950;
 
 export default function CampusMap({
-  isSatellite,
+  isSatellite = true,
   onToggleSatellite,
-  showPathways = true,
+  showPathways = false,
   landmarks = [],
   selectedCategory,
   activeRoute,
