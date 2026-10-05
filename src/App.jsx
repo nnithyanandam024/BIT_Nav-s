@@ -123,29 +123,9 @@ export default function App() {
     }
   };
 
-  // Natural Language Query Processor (Dual-Mode: Backend API or Client Engine)
+  // Natural Language Query Processor (Powered by Google Gemini 1.5 Flash + Local Campus RAG)
   const handleProcessAIQuery = async (query, chatHistory = []) => {
-    try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query, apiKey })
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        if (data.routeResult) {
-          setStartPlace(data.routeResult.from);
-          setDestinationPlace(data.routeResult.to);
-          setActiveRoute(data.routeResult);
-        }
-        return data;
-      }
-    } catch {
-      // Backend unavailable, fallback to client NLP engine seamlessly
-    }
-
-    // Client-side Gemini / NLP & routing execution
+    // Direct Client-Side Gemini / Semantic RAG & Routing Execution
     const aiParsed = await processNaturalLanguageQuery(query, campusData.landmarks, apiKey, chatHistory);
     let routeResult = null;
     let nearestResult = null;

@@ -21,7 +21,43 @@ export async function processNaturalLanguageQuery(query, landmarks, apiKey = nul
   return localSemanticParse(trimmed, landmarks, chatHistory);
 }
 
-// Call Google Gemini API (Gemini 2.5 Flash)
+// Test Gemini API Key connectivity
+export async function testGeminiApiKey(apiKey) {
+  if (!apiKey || !apiKey.trim()) return { success: false, message: 'Please enter an API key.' };
+  const key = apiKey.trim();
+  const models = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro'];
+  let lastErr = null;
+
+  for (const model of models) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ role: 'user', parts: [{ text: 'ping' }] }]
+        })
+      });
+      if (res.ok) {
+        return { success: true, message: `Connected to Google Gemini (${model}) successfully!`, model };
+      }
+      const text = await res.text();
+      let msg = `HTTP ${res.status}`;
+      try {
+        const parsed = JSON.parse(text);
+        if (parsed.error?.message) msg = parsed.error.message;
+      } catch {}
+      lastErr = msg;
+      if (res.status === 404) continue;
+      return { success: false, message: msg };
+    } catch (err) {
+      lastErr = err.message;
+    }
+  }
+  return { success: false, message: lastErr || 'Connection failed' };
+}
+
+// Call Google Gemini API with fallback across standard models
 async function callGeminiLLM(query, landmarks, apiKey, chatHistory = []) {
   // Compress landmarks for lightweight prompt context
   const landmarkSummary = landmarks.map(l => ({
@@ -63,7 +99,7 @@ Analyze the user's message in context of previous messages and return a single v
   const contents = [];
   
   // Append recent chat history (up to last 6 turns)
-  const recentHistory = chatHistory.slice(-6);
+  const recentHistory = (chatHistory || []).slice(-6);
   for (const msg of recentHistory) {
     if (msg.role === 'user') {
       contents.push({ role: 'user', parts: [{ text: msg.text }] });
@@ -75,62 +111,84 @@ Analyze the user's message in context of previous messages and return a single v
   // Current user query
   contents.push({ role: 'user', parts: [{ text: query }] });
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+  const candidateModels = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro'];
+  let lastError = null;
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents,
-      systemInstruction: { parts: [{ text: systemInstruction }] },
-      generationConfig: {
-        responseMimeType: 'application/json',
-        temperature: 0.2
+  for (const model of candidateModels) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey.trim()}`;
+
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents,
+          systemInstruction: { parts: [{ text: systemInstruction }] },
+          generationConfig: {
+            responseMimeType: 'application/json',
+            temperature: 0.2
+          }
+        })
+      });
+
+      if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`HTTP ${response.status}: ${errText}`);
       }
-    })
-  });
 
-  if (!response.ok) {
-    throw new Error(`Gemini HTTP ${response.status}: ${await response.text()}`);
+      const data = await response.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!text) throw new Error('Empty Gemini response');
+
+      let cleaned = text.trim();
+      if (cleaned.startsWith('```json')) cleaned = cleaned.slice(7);
+      else if (cleaned.startsWith('```')) cleaned = cleaned.slice(3);
+      if (cleaned.endsWith('```')) cleaned = cleaned.slice(0, -3);
+      cleaned = cleaned.trim();
+
+      const parsed = JSON.parse(cleaned);
+      parsed.engine = `Google Gemini (${model})`;
+
+      // Attach matched landmark objects if IDs present
+      if (parsed.source) {
+        parsed.sourcePlace = landmarks.find(l => l.id === parsed.source) || null;
+      }
+      if (parsed.destination) {
+        parsed.destPlace = landmarks.find(l => l.id === parsed.destination) || null;
+      }
+
+      return parsed;
+    } catch (err) {
+      lastError = err;
+      if (err.message && err.message.includes('404')) {
+        continue;
+      }
+      throw err;
+    }
   }
 
-  const data = await response.json();
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) throw new Error('Empty Gemini response');
-
-  const parsed = JSON.parse(text);
-  parsed.engine = 'Google Gemini 2.5 Flash';
-
-  // Attach matched landmark objects if IDs present
-  if (parsed.source) {
-    parsed.sourcePlace = landmarks.find(l => l.id === parsed.source) || null;
-  }
-  if (parsed.destination) {
-    parsed.destPlace = landmarks.find(l => l.id === parsed.destination) || null;
-  }
-
-  return parsed;
+  throw lastError || new Error('Failed to reach Gemini API');
 }
 
 // Local Semantic NLP Parser with 385 Rooms/Labs RAG & Multi-Turn Context
 export function localSemanticParse(query, landmarks, chatHistory = []) {
-  const q = query.toLowerCase().trim();
+  const q = query.toLowerCase().replace(/[?,.!]/g, ' ').trim();
 
   // 1. Detect Map View Toggle Commands
-  if (/(switch to|show|turn on|enable|view)\s+(satellite|aerial|satellite view|photo)/i.test(q)) {
+  if ((/satellite/i.test(q) && /(view|switch|show|turn|mode|map|toggle)/i.test(q)) || /^satellite$/i.test(q)) {
     return {
       engine: 'Built-in Campus NLP',
       intent: 'toggle_map',
       mapMode: 'satellite',
-      conversational_response: "Switching to the authentic Satellite Aerial View of BIT campus."
+      conversational_response: "Switched to the authentic Satellite Aerial View of BIT campus."
     };
   }
-  if (/(switch to|show|turn on|enable|view)\s+(standard|map|vector|schematic|default|normal)/i.test(q)) {
+  if (/(standard|vector|physical map|schematic|default view)/i.test(q) || (/(switch to|show|normal)\s+map/i.test(q))) {
     return {
       engine: 'Built-in Campus NLP',
       intent: 'toggle_map',
       mapMode: 'standard',
-      conversational_response: "Switching back to the clean Standard Physical Campus Map."
+      conversational_response: "Switched back to the Standard Physical Campus Map."
     };
   }
 
@@ -150,53 +208,121 @@ export function localSemanticParse(query, landmarks, chatHistory = []) {
     }
   }
 
-  // 3. Search All 385 Rooms and Laboratories with Stop-Word Filtering & Scoring
-  const stopWords = new Set(['dept', 'of', 'the', 'lab', 'labs', 'room', 'hall', 'centre', 'center', 'technology', 'engineering', 'in', 'at']);
+  // 3. Explicit From-To Routing
+  const fromToMatch = q.match(/(?:route\s+)?from\s+([a-z0-9\s&'-]+?)\s+(?:to|towards)\s+([a-z0-9\s&'-]+)/i) ||
+                      q.match(/between\s+([a-z0-9\s&'-]+?)\s+and\s+([a-z0-9\s&'-]+)/i);
+  if (fromToMatch) {
+    const sPlace = matchPlace(fromToMatch[1].trim(), landmarks);
+    const dPlace = matchPlace(fromToMatch[2].trim(), landmarks);
+    if (sPlace && dPlace) {
+      return {
+        engine: 'Built-in Campus NLP',
+        intent: 'navigate',
+        source: sPlace.id,
+        sourcePlace: sPlace,
+        destination: dPlace.id,
+        destPlace: dPlace,
+        conversational_response: `Calculating route from ${sPlace.name} to ${dPlace.name} along the blue campus walkways.`
+      };
+    }
+  }
+
+  // 4. Nearest Facility Detection
+  if (/nearest|closest|nearby|closest to|nearest to/i.test(q)) {
+    const typeKeywords = [
+      { type: 'canteen', regex: /canteen|cafeteria|food\s*court|eatery|snacks|juice|coffee|tea|lunch|breakfast|dinner|meat\s*and\s*eat|mess/i },
+      { type: 'labs', regex: /lab|laboratory|coding|software|mechatronics|aids|integrated\s*automation|spinning|physics|chemistry/i },
+      { type: 'hostel', regex: /hostel|dorm|dormitory|residence|cauvery|coral|diamond|emerald|ganga|narmadha|pearl|ruby|sapphire|yamuna|bhavani/i },
+      { type: 'sports', regex: /sports|ground|cricket|football|gym|gymnasium|court|tennis|volleyball|basketball|shuttle|agri\s*ground/i },
+      { type: 'academic', regex: /as\s*block|ib\s*block|mech\s*block|sf\s*block|auditorium|audi|lc|library|knowledge\s*centre/i },
+      { type: 'amenity', regex: /medical|hospital|clinic|doctor|first\s*aid|dispensary|radio|placement|recreation/i }
+    ];
+    let facilityType = 'canteen';
+    for (const tk of typeKeywords) {
+      if (tk.regex.test(q)) {
+        facilityType = tk.type;
+        break;
+      }
+    }
+    const sourcePlace = landmarks.find(l => l.id === 'as-main-left') || landmarks[0];
+    return {
+      engine: 'Built-in Campus NLP',
+      intent: 'nearest_facility',
+      source: sourcePlace.id,
+      sourcePlace,
+      facility_type: facilityType,
+      conversational_response: `Finding the closest ${facilityType} facility starting from ${sourcePlace.name}.`
+    };
+  }
+
+  // 5. Clean query for place and room matching
+  const stopWords = new Set([
+    'dept', 'of', 'the', 'lab', 'labs', 'room', 'hall', 'centre', 'center',
+    'technology', 'engineering', 'in', 'at', 'where', 'is', 'find', 'locate',
+    'search', 'how', 'to', 'get', 'take', 'me', 'and', 'for', 'show'
+  ]);
   const cleanQ = q.replace(/where is|where's|find|locate|search for|how to get to|take me to|show me/g, '').trim();
   const qWords = cleanQ.split(/\s+/).filter(w => w.length > 2 && !stopWords.has(w));
 
+  // 6. Direct Landmark Target (prioritized for full building / venue queries)
+  const targetLm = matchPlace(cleanQ, landmarks) || (contextDestination ? landmarks.find(l => l.id === contextDestination.id) : null);
+  if (targetLm && !cleanQ.includes('lab') && !cleanQ.includes('room') && !cleanQ.includes('hall')) {
+    const sourcePlace = landmarks.find(l => l.id === 'as-main-left') || landmarks[0];
+    return {
+      engine: 'Built-in Campus NLP',
+      intent: 'navigate',
+      source: sourcePlace.id,
+      sourcePlace,
+      destination: targetLm.id,
+      destPlace: targetLm,
+      conversational_response: `${targetLm.name} is located at ${targetLm.building || targetLm.name}. Here is your direct walking route along the campus paths.`
+    };
+  }
+
+  // 7. Search All 385 Rooms and Laboratories with Precise Keyword Matching
   let foundRoom = null;
   let maxScore = 0;
 
   if (qWords.length > 0) {
     for (const lm of landmarks) {
-      for (const f of lm.floors || []) {
-        for (const r of f.rooms || []) {
-          if (!r || !r.trim()) continue;
-          const rLower = r.toLowerCase().trim();
-          // Direct containment
-          if (cleanQ.length > 3 && (q.includes(rLower) || rLower.includes(cleanQ))) {
-            foundRoom = {
-              roomName: r,
-              floorName: f.name,
-              placeId: lm.id,
-              building: lm.name
-            };
-            break;
-          }
-          // Keyword score
-          const rWords = rLower.split(/\s+/).filter(w => w.length > 2 && !stopWords.has(w));
-          let matchCount = 0;
-          for (const qw of qWords) {
-            if (rWords.some(rw => rw.includes(qw) || qw.includes(rw))) matchCount++;
-          }
-          if (matchCount > maxScore && matchCount >= 1) {
-            maxScore = matchCount;
-            foundRoom = {
-              roomName: r,
-              floorName: f.name,
-              placeId: lm.id,
-              building: lm.name
-            };
+      for (const r of (lm.rooms || [])) {
+        if (!r.roomName) continue;
+        const rLower = r.roomName.toLowerCase().trim();
+        // Exact containment of full query
+        if (cleanQ.length >= 3 && (rLower.includes(cleanQ) || cleanQ.includes(rLower))) {
+          foundRoom = {
+            roomName: r.roomName,
+            floorName: r.floorName || 'Ground Floor',
+            placeId: lm.id,
+            building: lm.name
+          };
+          maxScore = 999;
+          break;
+        }
+
+        // Word overlap with boundary matching
+        const rWords = rLower.split(/[\s,()/-]+/).filter(w => w.length > 2 && !stopWords.has(w));
+        let matches = 0;
+        for (const qw of qWords) {
+          if (rWords.some(rw => rw === qw || (qw.length >= 6 && rw.startsWith(qw)) || (rw.length >= 6 && qw.startsWith(rw)))) {
+            matches += 2;
           }
         }
-        if (foundRoom && maxScore >= qWords.length) break;
+        if (matches > maxScore && matches >= 2) {
+          maxScore = matches;
+          foundRoom = {
+            roomName: r.roomName,
+            floorName: r.floorName || 'Ground Floor',
+            placeId: lm.id,
+            building: lm.name
+          };
+        }
       }
-      if (foundRoom && maxScore >= qWords.length) break;
+      if (maxScore === 999) break;
     }
   }
 
-  // If a specific room/lab was matched:
+  // If a room was matched:
   if (foundRoom) {
     const destPlace = landmarks.find(l => l.id === foundRoom.placeId) || landmarks[0];
     const sourcePlace = landmarks.find(l => l.id === 'as-main-left') || landmarks[0];
@@ -212,122 +338,72 @@ export function localSemanticParse(query, landmarks, chatHistory = []) {
     };
   }
 
-  // 4. Detect Intent
-  let intent = 'find_place';
-  let preference = 'standard';
-  let facilityType = null;
-  let sourcePlace = null;
-  let destPlace = contextDestination || null;
-
-  if (/nearest|closest|nearby|closest to|nearest to/i.test(q)) {
-    intent = 'nearest_facility';
-    preference = 'nearest';
-  } else if (/from\s+(.+)\s+to\s+(.+)/i.test(q) || /between\s+(.+)\s+and\s+(.+)/i.test(q) || /how do i get|how to reach|take me|route to|directions to/i.test(q)) {
-    intent = 'navigate';
-  } else if (/where are|list all|show all|what are the/i.test(q)) {
-    intent = 'list_facilities';
-  } else if (/where is|where's|find|locate|how to find/i.test(q)) {
-    intent = 'find_place';
+  // Fallback to landmark match if room was not found
+  if (targetLm) {
+    const sourcePlace = landmarks.find(l => l.id === 'as-main-left') || landmarks[0];
+    return {
+      engine: 'Built-in Campus NLP',
+      intent: 'navigate',
+      source: sourcePlace.id,
+      sourcePlace,
+      destination: targetLm.id,
+      destPlace: targetLm,
+      conversational_response: `${targetLm.name} is located at ${targetLm.building || targetLm.name}. Here is your direct walking route along the campus paths.`
+    };
   }
 
-  // 5. Facility Type Detection
-  const typeKeywords = [
-    { type: 'canteen', regex: /canteen|cafeteria|food\s*court|eatery|snacks|juice|coffee|tea|lunch|breakfast|dinner|meat\s*and\s*eat|mess/i },
-    { type: 'labs', regex: /lab|laboratory|coding|software|mechatronics|aids|integrated\s*automation|spinning|physics|chemistry/i },
-    { type: 'hostel', regex: /hostel|dorm|dormitory|residence|cauvery|coral|diamond|emerald|ganga|narmadha|pearl|ruby|sapphire|yamuna|bhavani/i },
-    { type: 'sports', regex: /sports|ground|cricket|football|gym|gymnasium|court|tennis|volleyball|basketball|shuttle|agri\s*ground/i },
-    { type: 'academic', regex: /as\s*block|ib\s*block|mech\s*block|sf\s*block|auditorium|audi|lc|library|knowledge\s*centre/i },
-    { type: 'amenity', regex: /medical|hospital|clinic|doctor|first\s*aid|dispensary|radio|placement|recreation/i }
-  ];
-
-  for (const tk of typeKeywords) {
-    if (tk.regex.test(q)) {
-      facilityType = tk.type;
-      break;
-    }
-  }
-
-  // 6. Extract Source and Destination Entities
-  const fromToMatch = q.match(/from\s+([a-z0-9\s&'-]+?)\s+(?:to|towards)\s+([a-z0-9\s&'-]+)/i);
-  if (fromToMatch) {
-    sourcePlace = matchPlace(fromToMatch[1].trim(), landmarks);
-    destPlace = matchPlace(fromToMatch[2].trim(), landmarks);
-    intent = 'navigate';
-  }
-
-  if (!destPlace) {
-    for (const lm of landmarks) {
-      const terms = [lm.name.toLowerCase(), lm.shortName.toLowerCase(), ...lm.aliases];
-      for (const t of terms) {
-        if (t.length > 2 && q.includes(t)) {
-          if (!sourcePlace || sourcePlace.id !== lm.id) {
-            destPlace = lm;
-            break;
-          }
-        }
-      }
-      if (destPlace) break;
-    }
-  }
-
-  // Default fallbacks to authentic landmark
-  const defaultBase = landmarks.find(l => l.id === 'as-main-left') || landmarks[0];
-  if (intent === 'navigate' && destPlace && !sourcePlace) {
-    sourcePlace = defaultBase;
-  }
-  if (intent === 'nearest_facility' && !sourcePlace) {
-    sourcePlace = defaultBase;
-  }
-
-  // 7. Human Conversational Response
-  let responseText = '';
-  if (intent === 'nearest_facility' && facilityType) {
-    responseText = `Finding the closest ${facilityType} facility starting from ${sourcePlace ? sourcePlace.name : 'your location'}.`;
-  } else if (intent === 'navigate' && sourcePlace && destPlace) {
-    responseText = `Calculating the direct road path from ${sourcePlace.name} to ${destPlace.name} along the blue campus walkways.`;
-  } else if (destPlace) {
-    responseText = `${destPlace.name} is located at ${destPlace.building}, ${destPlace.floor}. Here is how to navigate there.`;
-  } else if (intent === 'list_facilities' && facilityType) {
-    responseText = `Here are the verified campus ${facilityType} locations at Bannari Amman Institute of Technology.`;
-  } else {
-    responseText = `I'm your AI Campus Navigation Assistant for BIT Sathyamangalam. You can ask me for walking routes, find any lab or department, locate hostels and canteens, or switch between Map and Satellite view.`;
-  }
-
+  // 8. General Campus Help
   return {
     engine: 'Built-in Campus NLP',
-    intent,
-    preference,
-    source: sourcePlace ? sourcePlace.id : null,
-    sourcePlace,
-    destination: destPlace ? destPlace.id : null,
-    destPlace,
-    facility_type: facilityType,
-    conversational_response: responseText
+    intent: 'campus_info',
+    conversational_response: "I'm your AI Campus Navigation Assistant for BIT Sathyamangalam. You can ask me for walking routes (e.g. 'Route from Cauvery Hostel to Sports Ground'), find any room or lab ('Where is Mechatronics Lab?'), locate facilities ('Find nearest Canteen'), or switch views ('Switch to satellite view')."
   };
 }
 
 // Semantic Place Matcher
 export function matchPlace(str, landmarks) {
   if (!str) return null;
-  const clean = str.toLowerCase().replace(/the|to|a|an|at|near|block|hall/g, '').trim();
+  const s = str.toLowerCase().replace(/[?,.!]/g, '').trim();
+  const clean = s.replace(/^(the|to|a|an|at|near|from)\s+/g, '').trim();
+  if (!clean) return null;
 
-  // 1. Exact alias match
+  // 1. Exact name/shortName/alias match
   for (const lm of landmarks) {
-    if (lm.name.toLowerCase() === str || lm.shortName.toLowerCase() === str) return lm;
-    if ((lm.aliases || []).includes(str)) return lm;
+    const lmName = lm.name.toLowerCase().trim();
+    const lmShort = lm.shortName.toLowerCase().trim();
+    if (lmName === clean || lmShort === clean) return lm;
+    if ((lm.aliases || []).some(a => a.toLowerCase().trim() === clean)) return lm;
   }
 
-  // 2. Contains match
+  // 2. Specific Synonyms
+  if (/sports\s*ground|play\s*ground|cricket|football|ground/i.test(clean)) {
+    return landmarks.find(l => l.id === 'football-ground') ||
+           landmarks.find(l => l.id === 'cricket-ground') ||
+           landmarks.find(l => l.id === 'testing-1') ||
+           landmarks.find(l => l.category === 'sports');
+  }
+  if (/canteen|cafeteria|food\s*court|eatery/i.test(clean)) {
+    return landmarks.find(l => l.category === 'canteen') || landmarks.find(l => l.id === 'as-canteen');
+  }
+  if (/auditorium|audi/i.test(clean)) {
+    return landmarks.find(l => l.id === 'main-aduit') || landmarks.find(l => l.name.toLowerCase().includes('auditorium'));
+  }
+  if (/library|knowledge\s*centre/i.test(clean)) {
+    return landmarks.find(l => l.id === 'central_library') || landmarks.find(l => l.name.toLowerCase().includes('library'));
+  }
+  if (/gym|gymnasium/i.test(clean)) {
+    return landmarks.find(l => l.id === 'indoor-gym');
+  }
+
+  // 3. Substring match
   for (const lm of landmarks) {
+    const lmName = lm.name.toLowerCase().trim();
+    const lmShort = lm.shortName.toLowerCase().trim();
+    if (clean.length >= 4 && (lmName.includes(clean) || clean.includes(lmName))) return lm;
+    if (clean.length >= 4 && (lmShort.includes(clean) || clean.includes(lmShort))) return lm;
     for (const a of (lm.aliases || [])) {
-      if (str.includes(a) || a.includes(str)) return lm;
+      if (a.length >= 4 && (clean.includes(a.toLowerCase()) || a.toLowerCase().includes(clean))) return lm;
     }
-  }
-
-  // 3. Keyword match
-  for (const lm of landmarks) {
-    const target = (lm.name + ' ' + lm.shortName + ' ' + (lm.aliases || []).join(' ')).toLowerCase();
-    if (target.includes(clean)) return lm;
   }
 
   return null;
