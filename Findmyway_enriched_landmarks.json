@@ -1,0 +1,4762 @@
+[
+  {
+    "id": "as-main-left",
+    "name": "AS Block",
+    "shortName": "AS Block",
+    "aliases": [
+      "as block",
+      "as-main-left",
+      "special labs",
+      "dept of ise",
+      "cs 109",
+      "new product development lab",
+      "digital marketing lab",
+      "it operations",
+      "dept of ist",
+      "ise lab 1",
+      "ise lab 2",
+      "robotics & automation lab",
+      "discussion room",
+      "conference room",
+      "data science lab",
+      "ar/vr lab"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "CS 109",
+          "New Product Development Lab",
+          "Digital Marketing Lab",
+          "IT Operations"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Dept of IST",
+          "ISE Lab 1",
+          "ISE Lab 2",
+          "Robotics & Automation Lab"
+        ],
+        "name": "First floor"
+      },
+      {
+        "rooms": [
+          "Discussion Room",
+          "Conference Room",
+          "Data Science Lab",
+          "AR/VR Lab"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "CS 109",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "New Product Development Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Digital Marketing Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "IT Operations",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Dept of IST",
+        "floorName": "First floor"
+      },
+      {
+        "roomName": "ISE Lab 1",
+        "floorName": "First floor"
+      },
+      {
+        "roomName": "ISE Lab 2",
+        "floorName": "First floor"
+      },
+      {
+        "roomName": "Robotics & Automation Lab",
+        "floorName": "First floor"
+      },
+      {
+        "roomName": "Discussion Room",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Conference Room",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Data Science Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "AR/VR Lab",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1618,
+    "y": 1823,
+    "normX": 0.477,
+    "normY": 0.466,
+    "description": "AS Block - AS Block",
+    "facilities": [
+      "Special Labs",
+      "Dept of ISE",
+      "AS Block"
+    ],
+    "nearestNode": "100",
+    "offsetDistance": 74
+  },
+  {
+    "id": "as-main-right",
+    "name": "AS Special Labs",
+    "shortName": "AS Special Labs",
+    "aliases": [
+      "as special labs",
+      "as-main-right",
+      "special labs",
+      "dept of csbs",
+      "as block",
+      "mf lab",
+      "agricultural vehicle",
+      "kart vehicle",
+      "electrical vehicle",
+      "cb 101",
+      "block chain tech lab",
+      "nlp lab",
+      "world skill training centre",
+      "csbs lab 1",
+      "math experience centre",
+      "embedded technology lab",
+      "iot lab",
+      "cloud computing lab",
+      "communication lab",
+      "micro prototyping lab",
+      "hackathon lab",
+      "special lab conference hall 1",
+      "special lab conference hall 2",
+      "full stack lab - i",
+      "full stack lab - ii",
+      "full stack lab - iii"
+    ],
+    "category": "labs",
+    "type": "labs",
+    "building": "AS Block",
+    "floor": "4 Floors",
+    "floors": [
+      {
+        "name": "Base Floor",
+        "rooms": [
+          "MF Lab",
+          "Agricultural Vehicle",
+          "Kart Vehicle",
+          "Electrical Vehicle"
+        ]
+      },
+      {
+        "rooms": [
+          "CB 101",
+          "Block Chain Tech Lab",
+          "NLP Lab",
+          "World Skill Training Centre"
+        ],
+        "name": "Ground floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Dept of CSBS",
+          "CSBS Lab 1",
+          "Math Experience Centre",
+          "Embedded Technology Lab"
+        ]
+      },
+      {
+        "rooms": [
+          "IoT Lab",
+          "Cloud Computing Lab",
+          "Communication Lab",
+          "Micro Prototyping Lab",
+          "Hackathon Lab",
+          "Special lab Conference Hall 1",
+          "Special lab Conference Hall 2",
+          "Full Stack Lab - I",
+          "Full Stack Lab - II",
+          "Full Stack Lab - III"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "MF Lab",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "Agricultural Vehicle",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "Kart Vehicle",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "Electrical Vehicle",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "CB 101",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Block Chain Tech Lab",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "NLP Lab",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "World Skill Training Centre",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Dept of CSBS",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "CSBS Lab 1",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Math Experience Centre",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Embedded Technology Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "IoT Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Cloud Computing Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Communication Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Micro Prototyping Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Hackathon Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Special lab Conference Hall 1",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Special lab Conference Hall 2",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Full Stack Lab - I",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Full Stack Lab - II",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Full Stack Lab - III",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1808,
+    "y": 1835,
+    "normX": 0.533,
+    "normY": 0.469,
+    "description": "AS Special Labs - AS Block",
+    "facilities": [
+      "Special Labs",
+      "Dept of CSBS",
+      "AS Block"
+    ],
+    "nearestNode": "025",
+    "offsetDistance": 55
+  },
+  {
+    "id": "as-rib-1",
+    "name": "AS rib 1",
+    "shortName": "AS rib 1",
+    "aliases": [
+      "as rib 1",
+      "as-rib-1",
+      "dept of biomedical",
+      "as block",
+      "dept of biomedical engineering",
+      "biomedical faculty hall",
+      "ew 113",
+      "ew 114",
+      "ew 115",
+      "ew 213",
+      "ew 214",
+      "ew 215"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Dept of Biomedical Engineering",
+          "Biomedical Faculty Hall"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "EW 113",
+          "EW 114",
+          "EW 115"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "EW 213",
+          "EW 214",
+          "EW 215"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of Biomedical Engineering",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Biomedical Faculty Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "EW 113",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 114",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 115",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 213",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 214",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 215",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1635,
+    "y": 2031,
+    "normX": 0.482,
+    "normY": 0.519,
+    "description": "AS rib 1 - AS Block",
+    "facilities": [
+      "Dept of Biomedical"
+    ],
+    "nearestNode": "035",
+    "offsetDistance": 66
+  },
+  {
+    "id": "as-rib-10",
+    "name": "AS rib 10",
+    "shortName": "AS rib 10",
+    "aliases": [
+      "as rib 10",
+      "as-rib-10",
+      "as block",
+      "chemical processing lab",
+      "apparel testing lab",
+      "textile testing lab",
+      "vlsi design lab",
+      "digital electronic lab",
+      "microprocessor lab"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Chemical Processing Lab"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Apparel Testing Lab",
+          "Textile Testing Lab"
+        ]
+      },
+      {
+        "rooms": [
+          "VLSI Design Lab",
+          "Digital Electronic Lab",
+          "Microprocessor Lab"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Chemical Processing Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Apparel Testing Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Textile Testing Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "VLSI Design Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Digital Electronic Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Microprocessor Lab",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1845,
+    "y": 2469,
+    "normX": 0.544,
+    "normY": 0.631,
+    "description": "AS rib 10 - AS Block",
+    "facilities": [],
+    "nearestNode": "058",
+    "offsetDistance": 82
+  },
+  {
+    "id": "as-rib-11",
+    "name": "AS rib 11",
+    "shortName": "AS rib 11",
+    "aliases": [
+      "as rib 11",
+      "as-rib-11",
+      "dept of textile tech",
+      "tx",
+      "as block",
+      "dept of textile technology",
+      "textile seminar hall",
+      "ew 104",
+      "ew 105",
+      "ew 106",
+      "ew 204",
+      "ew 205",
+      "ew 206"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Dept of Textile Technology",
+          "Textile Seminar Hall"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "EW 104",
+          "EW 105",
+          "EW 106"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "EW 204",
+          "EW 205",
+          "EW 206"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of Textile Technology",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Textile Seminar Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "EW 104",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 105",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 106",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 204",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 205",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 206",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1672,
+    "y": 2594,
+    "normX": 0.493,
+    "normY": 0.663,
+    "description": "AS rib 11 - AS Block",
+    "facilities": [
+      "Dept of Textile Tech",
+      "TX"
+    ],
+    "nearestNode": "083",
+    "offsetDistance": 64
+  },
+  {
+    "id": "as-rib-12",
+    "name": "AS rib 12",
+    "shortName": "AS rib 12",
+    "aliases": [
+      "as rib 12",
+      "as-rib-12",
+      "gurugulam",
+      "food microbiology",
+      "as block",
+      "servo motion control lab",
+      "weaving lab",
+      "food technology lab",
+      "food analysis lab",
+      "food tech lab 2"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Servo Motion Control lab",
+          "Weaving Lab"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Food Technology Lab"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Food Analysis Lab",
+          "Food Tech Lab 2"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Servo Motion Control lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Weaving Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Food Technology Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Food Analysis Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Food Tech Lab 2",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1822,
+    "y": 2590,
+    "normX": 0.537,
+    "normY": 0.662,
+    "description": "AS rib 12 - AS Block",
+    "facilities": [
+      "gurugulam",
+      "Food microbiology"
+    ],
+    "nearestNode": "050",
+    "offsetDistance": 20
+  },
+  {
+    "id": "as-rib-2",
+    "name": "AS rib 2",
+    "shortName": "AS rib 2",
+    "aliases": [
+      "as rib 2",
+      "as-rib-2",
+      "dept of chemistry",
+      "as block",
+      "chemistry lab 1",
+      "language lab",
+      "elcc cell",
+      "dept of humanities",
+      "elcc smart class",
+      "elcc library",
+      "physics lab 1"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of Chemistry",
+          "Chemistry Lab 1"
+        ]
+      },
+      {
+        "rooms": [
+          "Language Lab",
+          "ELCC Cell",
+          "Dept of Humanities",
+          "ELCC smart class",
+          "ELCC library"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Physics Lab 1"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of Chemistry",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Chemistry Lab 1",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Language Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ELCC Cell",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Dept of Humanities",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ELCC smart class",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ELCC library",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Physics Lab 1",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1818,
+    "y": 2011,
+    "normX": 0.536,
+    "normY": 0.514,
+    "description": "AS rib 2 - AS Block",
+    "facilities": [
+      "Dept of Chemistry"
+    ],
+    "nearestNode": "034",
+    "offsetDistance": 50
+  },
+  {
+    "id": "as-rib-3",
+    "name": "AS rib 3",
+    "shortName": "AS rib 3",
+    "aliases": [
+      "as rib 3",
+      "as-rib-3",
+      "dept of civil",
+      "as block",
+      "dept of civil engineering",
+      "conference hall",
+      "ew 116",
+      "ew 117",
+      "ew 118",
+      "ew 216",
+      "ew 217",
+      "ew 218"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of Civil Engineering",
+          "Conference Hall"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "EW 116",
+          "EW 117",
+          "EW 118"
+        ]
+      },
+      {
+        "rooms": [
+          "EW 216",
+          "EW 217",
+          "EW 218"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of Civil Engineering",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Conference Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "EW 116",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 117",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 118",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 216",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 217",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 218",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1632,
+    "y": 2136,
+    "normX": 0.481,
+    "normY": 0.546,
+    "description": "AS rib 3 - AS Block",
+    "facilities": [
+      "Dept of Civil"
+    ],
+    "nearestNode": "096",
+    "offsetDistance": 70
+  },
+  {
+    "id": "as-rib-4",
+    "name": "AS rib 4",
+    "shortName": "AS rib 4",
+    "aliases": [
+      "as rib 4",
+      "as-rib-4",
+      "dept of of physics",
+      "as block",
+      "signal processing lab",
+      "pcb design lab",
+      "pcb fabrication lab",
+      "dept of physics",
+      "physics lab 2",
+      "chemistry lab 2"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Signal Processing Lab",
+          "PCB Design Lab",
+          "PCB Fabrication Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Dept of Physics",
+          "Physics Lab 2"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Chemistry Lab 2"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Signal Processing Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "PCB Design Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "PCB Fabrication Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Dept of Physics",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Physics Lab 2",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Chemistry Lab 2",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1838,
+    "y": 2117,
+    "normX": 0.542,
+    "normY": 0.541,
+    "description": "AS rib 4 - AS Block",
+    "facilities": [
+      "Dept of of physics"
+    ],
+    "nearestNode": "038",
+    "offsetDistance": 17
+  },
+  {
+    "id": "as-rib-5",
+    "name": "AS rib 5",
+    "shortName": "AS rib 5",
+    "aliases": [
+      "as rib 5",
+      "as-rib-5",
+      "dept of ece",
+      "as block",
+      "faculty hall 2",
+      "ew 107",
+      "ew 108",
+      "ew 109",
+      "ew 207",
+      "ew 208",
+      "ew 209"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Faculty Hall 2",
+          "Dept of ECE"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "EW 107",
+          "EW 108",
+          "EW 109"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "EW 207",
+          "EW 208",
+          "EW 209"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Faculty Hall 2",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Dept of ECE",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "EW 107",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 108",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 109",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 207",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 208",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 209",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1645,
+    "y": 2246,
+    "normX": 0.485,
+    "normY": 0.574,
+    "description": "AS rib 5 - AS Block",
+    "facilities": [
+      "Dept of ECE"
+    ],
+    "nearestNode": "092",
+    "offsetDistance": 63
+  },
+  {
+    "id": "as-rib-6",
+    "name": "AS rib 6",
+    "shortName": "AS rib 6",
+    "aliases": [
+      "as rib 6",
+      "as-rib-6",
+      "dept of civil",
+      "dept of biomedical",
+      "as block",
+      "soil mechanic lab",
+      "cadd & survey lab",
+      "survey & environmental lab",
+      "biochemistry lab",
+      "physiology lab"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Soil Mechanic Lab"
+        ]
+      },
+      {
+        "rooms": [
+          "CADD & Survey Lab",
+          "Survey & Environmental Lab"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Biochemistry Lab",
+          "Physiology Lab"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Soil Mechanic Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "CADD & Survey Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Survey & Environmental Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Biochemistry Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Physiology Lab",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1832,
+    "y": 2254,
+    "normX": 0.54,
+    "normY": 0.576,
+    "description": "AS rib 6 - AS Block",
+    "facilities": [
+      "Dept of Civil",
+      "Dept of biomedical"
+    ],
+    "nearestNode": "043",
+    "offsetDistance": 75
+  },
+  {
+    "id": "as-rib-7",
+    "name": "AS rib 7",
+    "shortName": "AS rib 7",
+    "aliases": [
+      "as rib 7",
+      "as-rib-7",
+      "dept of ece",
+      "as block",
+      "ece seminar hall",
+      "faculty hall 1",
+      "ew 111",
+      "ew 112",
+      "ew 210",
+      "ew 211",
+      "ew 212"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of ECE",
+          "ECE Seminar Hall",
+          "Faculty Hall 1"
+        ]
+      },
+      {
+        "rooms": [
+          "EW 111",
+          "EW 112"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "EW 210",
+          "EW 211",
+          "EW 212"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of ECE",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "ECE Seminar Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Faculty Hall 1",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "EW 111",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 112",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 210",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 211",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 212",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1645,
+    "y": 2356,
+    "normX": 0.485,
+    "normY": 0.602,
+    "description": "AS rib 7 - AS Block",
+    "facilities": [
+      "Dept of ECE"
+    ],
+    "nearestNode": "090",
+    "offsetDistance": 51
+  },
+  {
+    "id": "as-rib-8",
+    "name": "AS rib 8",
+    "shortName": "AS rib 8",
+    "aliases": [
+      "as rib 8",
+      "as-rib-8",
+      "dept of ece",
+      "as block",
+      "analog electronic & ic lab",
+      "cyber - physical systems lab",
+      "networks lab",
+      "embedded tech lab",
+      "iot lab",
+      "analog & digital communication lab",
+      "microwave & optical lab"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Analog electronic & IC Lab",
+          "Cyber - physical systems Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Networks Lab",
+          "Embedded Tech Lab",
+          "IoT Lab"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Analog & Digital communication Lab",
+          "Microwave & Optical Lab"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Analog electronic & IC Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Cyber - physical systems Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Networks Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Embedded Tech Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "IoT Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Analog & Digital communication Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Microwave & Optical Lab",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1801,
+    "y": 2336,
+    "normX": 0.531,
+    "normY": 0.597,
+    "description": "AS rib 8 - AS Block",
+    "facilities": [
+      "Dept of ECE"
+    ],
+    "nearestNode": "044",
+    "offsetDistance": 30
+  },
+  {
+    "id": "as-rib-9",
+    "name": "AS rib 9",
+    "shortName": "AS rib 9",
+    "aliases": [
+      "as rib 9",
+      "as-rib-9",
+      "dept of food tech",
+      "fd",
+      "as block",
+      "intellectual property and innovation cell",
+      "ew 101",
+      "ew 102",
+      "ew 103",
+      "ew 201",
+      "ew 202",
+      "ew 203"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "AS Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Intellectual Property and Innovation cell"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "EW 101",
+          "EW 102",
+          "EW 103"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "EW 201",
+          "EW 202",
+          "EW 203"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Intellectual Property and Innovation cell",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "EW 101",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 102",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 103",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EW 201",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 202",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EW 203",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1625,
+    "y": 2489,
+    "normX": 0.479,
+    "normY": 0.636,
+    "description": "AS rib 9 - AS Block",
+    "facilities": [
+      "Dept of food Tech",
+      "FD"
+    ],
+    "nearestNode": "088",
+    "offsetDistance": 68
+  },
+  {
+    "id": "basketball-court",
+    "name": "BasketBall Court ",
+    "shortName": "BasketBall Court",
+    "aliases": [
+      "basketball court ",
+      "basketball-court"
+    ],
+    "category": "sports",
+    "type": "sports",
+    "building": "BasketBall Court ",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1676,
+    "y": 3303,
+    "normX": 0.494,
+    "normY": 0.844,
+    "description": "BasketBall Court ",
+    "facilities": [],
+    "nearestNode": "080",
+    "offsetDistance": 218
+  },
+  {
+    "id": "boys-visitor-hall",
+    "name": "Visitor hall (Boys)",
+    "shortName": "Visitor hall",
+    "aliases": [
+      "visitor hall (boys)",
+      "boys-visitor-hall",
+      "boys hostel gate",
+      "boys visitor hall"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Boys Hostel Gate",
+    "floor": "1 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Boys Visitor Hall"
+        ],
+        "name": "Ground Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Boys Visitor Hall",
+        "floorName": "Ground Floor"
+      }
+    ],
+    "x": 2167,
+    "y": 2782,
+    "normX": 0.639,
+    "normY": 0.711,
+    "description": "Visitor hall (Boys) - Boys Hostel Gate",
+    "facilities": [],
+    "nearestNode": "071",
+    "offsetDistance": 43
+  },
+  {
+    "id": "cafeteria",
+    "name": "Cafeteria",
+    "shortName": "Cafeteria",
+    "aliases": [
+      "cafeteria",
+      "mess"
+    ],
+    "category": "dining",
+    "type": "dining",
+    "building": "mess",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1757,
+    "y": 3072,
+    "normX": 0.518,
+    "normY": 0.785,
+    "description": "Cafeteria - mess",
+    "facilities": [],
+    "nearestNode": "080",
+    "offsetDistance": 33
+  },
+  {
+    "id": "cauvery-hostel",
+    "name": "Cauvery Hostel",
+    "shortName": "Cauvery Hostel",
+    "aliases": [
+      "cauvery hostel",
+      "cauvery-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Cauvery Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 702,
+    "y": 3533,
+    "normX": 0.207,
+    "normY": 0.903,
+    "description": "Cauvery Hostel",
+    "facilities": [],
+    "nearestNode": "184",
+    "offsetDistance": 358
+  },
+  {
+    "id": "coral-hostel",
+    "name": "Coral Hostel",
+    "shortName": "Coral Hostel",
+    "aliases": [
+      "coral hostel",
+      "coral-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Coral Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 2134,
+    "y": 2579,
+    "normX": 0.629,
+    "normY": 0.659,
+    "description": "Coral Hostel",
+    "facilities": [],
+    "nearestNode": "062",
+    "offsetDistance": 51
+  },
+  {
+    "id": "cricket-ground",
+    "name": "Cricket Ground",
+    "shortName": "Cricket Ground",
+    "aliases": [
+      "cricket ground",
+      "cricket-ground"
+    ],
+    "category": "sports",
+    "type": "sports",
+    "building": "Cricket Ground",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 695,
+    "y": 2418,
+    "normX": 0.205,
+    "normY": 0.618,
+    "description": "Cricket Ground",
+    "facilities": [],
+    "nearestNode": "148",
+    "offsetDistance": 176
+  },
+  {
+    "id": "diamond-hostel",
+    "name": "Diamond Hostel",
+    "shortName": "Diamond Hostel",
+    "aliases": [
+      "diamond hostel",
+      "diamond-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Diamond Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 2883,
+    "y": 2403,
+    "normX": 0.85,
+    "normY": 0.614,
+    "description": "Diamond Hostel",
+    "facilities": [],
+    "nearestNode": "072",
+    "offsetDistance": 532
+  },
+  {
+    "id": "emerald-hostel",
+    "name": "Emerald Hostel",
+    "shortName": "Emerald Hostel",
+    "aliases": [
+      "emerald hostel",
+      "emerald-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Emerald Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 2442,
+    "y": 2477,
+    "normX": 0.72,
+    "normY": 0.633,
+    "description": "Emerald Hostel",
+    "facilities": [],
+    "nearestNode": "072",
+    "offsetDistance": 233
+  },
+  {
+    "id": "fashion-centre",
+    "name": "Fashion Resource Centre",
+    "shortName": "Fashion Resource Centre",
+    "aliases": [
+      "fashion resource centre",
+      "fashion-centre",
+      "dept of fashion tech",
+      "ft",
+      "as block",
+      "dept of fashion technology",
+      "garment construction lab 1",
+      "garment construction lab 2"
+    ],
+    "category": "amenity",
+    "type": "amenity",
+    "building": "AS Block",
+    "floor": "2 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of Fashion Technology"
+        ]
+      },
+      {
+        "rooms": [
+          "Garment Construction Lab 1",
+          "Garment Construction Lab 2"
+        ],
+        "name": "First Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of Fashion Technology",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Garment Construction Lab 1",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Garment Construction Lab 2",
+        "floorName": "First Floor"
+      }
+    ],
+    "x": 1635,
+    "y": 2700,
+    "normX": 0.482,
+    "normY": 0.69,
+    "description": "Fashion Resource Centre - AS Block",
+    "facilities": [
+      "Dept of Fashion Tech",
+      "FT"
+    ],
+    "nearestNode": "087",
+    "offsetDistance": 45
+  },
+  {
+    "id": "football-ground",
+    "name": "FootBall Ground",
+    "shortName": "FootBall Ground",
+    "aliases": [
+      "football ground",
+      "football-ground"
+    ],
+    "category": "sports",
+    "type": "sports",
+    "building": "FootBall Ground",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 672,
+    "y": 1706,
+    "normX": 0.198,
+    "normY": 0.436,
+    "description": "FootBall Ground",
+    "facilities": [],
+    "nearestNode": "144",
+    "offsetDistance": 205
+  },
+  {
+    "id": "ganga-hostel",
+    "name": "Ganga Hostel",
+    "shortName": "Ganga Hostel",
+    "aliases": [
+      "ganga hostel",
+      "ganga-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Ganga Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 817,
+    "y": 3299,
+    "normX": 0.241,
+    "normY": 0.843,
+    "description": "Ganga Hostel",
+    "facilities": [],
+    "nearestNode": "184",
+    "offsetDistance": 103
+  },
+  {
+    "id": "girls-mess",
+    "name": "Mess",
+    "shortName": "Mess",
+    "aliases": [
+      "mess",
+      "girls-mess",
+      "food",
+      "girls mess",
+      "dance hall",
+      "girls gym"
+    ],
+    "category": "dining",
+    "type": "dining",
+    "building": "Girls Mess",
+    "floor": "2 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Mess"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Dance Hall",
+          "Girls Gym",
+          "Mess"
+        ],
+        "name": "First Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Mess",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Dance Hall",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Girls Gym",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Mess",
+        "floorName": "First Floor"
+      }
+    ],
+    "x": 1757,
+    "y": 3119,
+    "normX": 0.518,
+    "normY": 0.797,
+    "description": "Mess - Girls Mess",
+    "facilities": [
+      "food"
+    ],
+    "nearestNode": "080",
+    "offsetDistance": 37
+  },
+  {
+    "id": "ib-block-1",
+    "name": "IB Block",
+    "shortName": "IB Block",
+    "aliases": [
+      "ib block",
+      "ib-block-1",
+      "dept of maths",
+      "dept of bio-tech",
+      "ib block right",
+      "dept of mathematics",
+      "maths faculty hall",
+      "biotech seminar hall",
+      "animal cell culture facility",
+      "ww 002",
+      "ww 003",
+      "ww 004",
+      "ncc",
+      "genetic engineering lab",
+      "molecular biology lab",
+      "dept of bio-technology",
+      "plant issue culture lab",
+      "bio-prospecting research lab",
+      "student counsellor cabin",
+      "unit operations lab",
+      "excise room",
+      "ww 216",
+      "ww 217",
+      "ww 218",
+      "ww 219",
+      "ww 220",
+      "ww 221"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "IB Block Right",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Dept of Mathematics",
+          "Maths Faculty Hall",
+          "Biotech Seminar Hall",
+          "Animal Cell Culture facility",
+          "WW 002",
+          "WW 003",
+          "WW 004",
+          "NCC"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Genetic Engineering Lab",
+          "Molecular Biology Lab",
+          "Dept of Bio-Technology",
+          "Plant Issue Culture Lab",
+          "Bio-Prospecting Research Lab",
+          "Student Counsellor Cabin",
+          "Unit Operations Lab",
+          "Excise Room"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "WW 216",
+          "WW 217",
+          "WW 218",
+          "WW 219",
+          "WW 220",
+          "WW 221"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of Mathematics",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Maths Faculty Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Biotech Seminar Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Animal Cell Culture facility",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 002",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 003",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 004",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "NCC",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Genetic Engineering Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Molecular Biology Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Dept of Bio-Technology",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Plant Issue Culture Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Bio-Prospecting Research Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Student Counsellor Cabin",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Unit Operations Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Excise Room",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 216",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 217",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 218",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 219",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 220",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 221",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1357,
+    "y": 1843,
+    "normX": 0.4,
+    "normY": 0.471,
+    "description": "IB Block - IB Block Right",
+    "facilities": [
+      "Dept of maths",
+      "Dept of Bio-Tech"
+    ],
+    "nearestNode": "134",
+    "offsetDistance": 16
+  },
+  {
+    "id": "ib-block-2",
+    "name": "IB Block",
+    "shortName": "IB Block",
+    "aliases": [
+      "ib block",
+      "ib-block-2",
+      "dept of bio-tech",
+      "ib block left",
+      "ww 005",
+      "ww 006",
+      "ww 007",
+      "ww 008",
+      "bio process lab",
+      "bio energy research lab",
+      "ww 011",
+      "ww 012",
+      "nano biotechnology lab",
+      "cell biology lab",
+      "microbiology lab",
+      "chemical engineering lab",
+      "ww 222",
+      "ww 223",
+      "ww 224",
+      "ww 225",
+      "ww 226",
+      "ww 227"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "IB Block Left",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "WW 005",
+          "WW 006",
+          "WW 007",
+          "WW 008",
+          "Bio process Lab",
+          "Bio Energy Research Lab",
+          "WW 011",
+          "WW 012"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Nano Biotechnology Lab",
+          "Cell Biology Lab",
+          "Microbiology Lab",
+          "Chemical Engineering Lab"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "WW 222",
+          "WW 223",
+          "WW 224",
+          "WW 225",
+          "WW 226",
+          "WW 227"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "WW 005",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 006",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 007",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 008",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Bio process Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Bio Energy Research Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 011",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 012",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Nano Biotechnology Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Cell Biology Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Microbiology Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Chemical Engineering Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 222",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 223",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 224",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 225",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 226",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 227",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1177,
+    "y": 1843,
+    "normX": 0.347,
+    "normY": 0.471,
+    "description": "IB Block - IB Block Left",
+    "facilities": [
+      "Dept of Bio-Tech"
+    ],
+    "nearestNode": "132",
+    "offsetDistance": 99
+  },
+  {
+    "id": "ib-rib-1",
+    "name": "IB rib 1",
+    "shortName": "IB rib 1",
+    "aliases": [
+      "ib rib 1",
+      "ib-rib-1",
+      "dept of eie",
+      "ib block",
+      "yoga center\n",
+      "e&i seminar hall",
+      "ww 113",
+      "ww 114",
+      "ww 115",
+      "ww 212",
+      "ww 211"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of EIE",
+          "Yoga Center\n",
+          "E&I Seminar Hall"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "WW 113",
+          "WW 114",
+          "WW 115"
+        ]
+      },
+      {
+        "rooms": [
+          "WW 212",
+          "WW 211"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of EIE",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Yoga Center\n",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "E&I Seminar Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 113",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 114",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 115",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 212",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 211",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1394,
+    "y": 2046,
+    "normX": 0.411,
+    "normY": 0.523,
+    "description": "IB rib 1 - IB Block",
+    "facilities": [
+      "Dept of EIE"
+    ],
+    "nearestNode": "095",
+    "offsetDistance": 87
+  },
+  {
+    "id": "ib-rib-10",
+    "name": "IB rib 10",
+    "shortName": "IB rib 10",
+    "aliases": [
+      "ib rib 10",
+      "ib-rib-10",
+      "dept of eee",
+      "ib block",
+      "eee computer centre 1",
+      "eee computer centre 2",
+      "electrical wiring lab",
+      "prototype modelling lab"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "First Floor",
+        "rooms": [
+          "EEE Computer Centre 1",
+          "EEE Computer Centre 2"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Electrical Wiring Lab"
+        ]
+      },
+      {
+        "name": "Ground Floor\n",
+        "rooms": [
+          "Prototype Modelling Lab"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "EEE Computer Centre 1",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EEE Computer Centre 2",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Electrical Wiring Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Prototype Modelling Lab",
+        "floorName": "Ground Floor\n"
+      }
+    ],
+    "x": 1208,
+    "y": 2508,
+    "normX": 0.356,
+    "normY": 0.641,
+    "description": "IB rib 10 - IB Block",
+    "facilities": [
+      "Dept of EEE"
+    ],
+    "nearestNode": "119",
+    "offsetDistance": 95
+  },
+  {
+    "id": "ib-rib-11",
+    "name": "IB rib 11",
+    "shortName": "IB rib 11",
+    "aliases": [
+      "ib rib 11",
+      "ib-rib-11",
+      "ib block",
+      "iecc launch pad",
+      "iecc seminar hall",
+      "ww 104",
+      "ww 105",
+      "ww 106",
+      "ww 203",
+      "ww 204",
+      "ww 205"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "IECC Launch Pad",
+          "IECC Seminar Hall"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "WW 104",
+          "WW 105",
+          "WW 106"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "WW 203",
+          "WW 204",
+          "WW 205"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "IECC Launch Pad",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "IECC Seminar Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 104",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 105",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 106",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 203",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 204",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 205",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1401,
+    "y": 2606,
+    "normX": 0.413,
+    "normY": 0.666,
+    "description": "IB rib 11 - IB Block",
+    "facilities": [],
+    "nearestNode": "085",
+    "offsetDistance": 52
+  },
+  {
+    "id": "ib-rib-12",
+    "name": "IB rib 12",
+    "shortName": "IB rib 12",
+    "aliases": [
+      "ib rib 12",
+      "ib-rib-12",
+      "ib block",
+      "salzer lab",
+      "networking lab",
+      "plc lab",
+      "welding lab"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Salzer Lab",
+          "Networking Lab"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "PLC Lab"
+        ],
+        "name": "Second Floor"
+      },
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Welding Lab"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Salzer Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Networking Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "PLC Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Welding Lab",
+        "floorName": "Ground Floor"
+      }
+    ],
+    "x": 1218,
+    "y": 2602,
+    "normX": 0.359,
+    "normY": 0.665,
+    "description": "IB rib 12 - IB Block",
+    "facilities": [],
+    "nearestNode": "118",
+    "offsetDistance": 116
+  },
+  {
+    "id": "ib-rib-2",
+    "name": "IB rib 2",
+    "shortName": "IB rib 2",
+    "aliases": [
+      "ib rib 2",
+      "ib-rib-2",
+      "ib block",
+      "bit tbi incubator",
+      "ß,α cave",
+      "idea pad",
+      "mission control",
+      "proto lounge",
+      "fab lab",
+      "venture space",
+      "launch pad"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "BIT TBI Incubator",
+          "ß,α cave"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Idea Pad",
+          "Mission Control",
+          "Proto Lounge"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Fab Lab",
+          "Venture Space",
+          "Launch Pad"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "BIT TBI Incubator",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "ß,α cave",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Idea Pad",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Mission Control",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Proto Lounge",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Fab Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Venture Space",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Launch Pad",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1197,
+    "y": 2050,
+    "normX": 0.353,
+    "normY": 0.524,
+    "description": "IB rib 2 - IB Block",
+    "facilities": [],
+    "nearestNode": "130",
+    "offsetDistance": 80
+  },
+  {
+    "id": "ib-rib-3",
+    "name": "IB rib 3",
+    "shortName": "IB rib 3",
+    "aliases": [
+      "ib rib 3",
+      "ib-rib-3",
+      "dept of aids",
+      "ib block",
+      "network maintenance cell (nmc)",
+      "ww 117",
+      "ww 118",
+      "ww 116",
+      "ww 213",
+      "ww 214",
+      "ww 215"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Network Maintenance Cell (NMC)"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "WW 117",
+          "WW 118",
+          "WW 116"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "WW 213",
+          "WW 214",
+          "WW 215"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Network Maintenance Cell (NMC)",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 117",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 118",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 116",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 213",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 214",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 215",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1384,
+    "y": 2121,
+    "normX": 0.408,
+    "normY": 0.542,
+    "description": "IB rib 3 - IB Block",
+    "facilities": [
+      "Dept of AIDS"
+    ],
+    "nearestNode": "116",
+    "offsetDistance": 61
+  },
+  {
+    "id": "ib-rib-4",
+    "name": "IB rib 4",
+    "shortName": "IB rib 4",
+    "aliases": [
+      "ib rib 4",
+      "ib-rib-4",
+      "dept of ct",
+      "dept of aids",
+      "ib block",
+      "integrated automation technology lab",
+      "dept of  mechatronics engineering",
+      "mechatronics labs",
+      "aids labs"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Integrated Automation Technology Lab"
+        ]
+      },
+      {
+        "rooms": [
+          "Dept of  Mechatronics Engineering",
+          "Mechatronics Labs"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Dept of AIDS",
+          "AIDS Labs"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Integrated Automation Technology Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Dept of  Mechatronics Engineering",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Mechatronics Labs",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Dept of AIDS",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "AIDS Labs",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1177,
+    "y": 2156,
+    "normX": 0.347,
+    "normY": 0.551,
+    "description": "IB rib 4 - IB Block",
+    "facilities": [
+      "Dept of CT",
+      "Dept of AIDS"
+    ],
+    "nearestNode": "126",
+    "offsetDistance": 22
+  },
+  {
+    "id": "ib-rib-5",
+    "name": "IB rib 5",
+    "shortName": "IB rib 5",
+    "aliases": [
+      "ib rib 5",
+      "ib-rib-5",
+      "dept of eee",
+      "ib block",
+      "eee seminar hall",
+      "ww 107",
+      "ww 108",
+      "ww 109",
+      "ww 207",
+      "ww 206"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of EEE",
+          "EEE Seminar Hall"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "WW 107",
+          "WW 108",
+          "WW 109"
+        ]
+      },
+      {
+        "rooms": [
+          "WW 207",
+          "WW 206"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of EEE",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "EEE Seminar Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 107",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 108",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 109",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 207",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 206",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1381,
+    "y": 2258,
+    "normX": 0.407,
+    "normY": 0.577,
+    "description": "IB rib 5 - IB Block",
+    "facilities": [
+      "Dept of EEE"
+    ],
+    "nearestNode": "117",
+    "offsetDistance": 53
+  },
+  {
+    "id": "ib-rib-6",
+    "name": "IB rib 6",
+    "shortName": "IB rib 6",
+    "aliases": [
+      "ib rib 6",
+      "ib-rib-6",
+      "dept of eie",
+      "ib block",
+      "eie computer centre",
+      "process control lab",
+      "industrial instrumentation lab",
+      "advanced embedded system design lab",
+      "eie conference hall",
+      "eie smart class room",
+      "sensor and transducer lab"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "EIE Computer Centre",
+          "Process Control Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Industrial Instrumentation Lab",
+          "Advanced Embedded System Design Lab"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "EIE Conference Hall",
+          "EIE Smart Class Room",
+          "Sensor and Transducer Lab"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "EIE Computer Centre",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Process Control Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Industrial Instrumentation Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Advanced Embedded System Design Lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "EIE Conference Hall",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "EIE Smart Class Room",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Sensor and Transducer Lab",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1194,
+    "y": 2289,
+    "normX": 0.352,
+    "normY": 0.585,
+    "description": "IB rib 6 - IB Block",
+    "facilities": [
+      "Dept of EIE"
+    ],
+    "nearestNode": "123",
+    "offsetDistance": 83
+  },
+  {
+    "id": "ib-rib-7",
+    "name": "IB rib 7",
+    "shortName": "IB rib 7",
+    "aliases": [
+      "ib rib 7",
+      "ib-rib-7",
+      "dept of eee",
+      "ib block",
+      "faculty hall",
+      "ww 110",
+      "ww 111",
+      "ww 112",
+      "ww 208",
+      "ww 209",
+      "ww 210"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Faculty Hall"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "WW 110",
+          "WW 111",
+          "WW 112"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "WW 208",
+          "WW 209",
+          "WW 210"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Faculty Hall",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 110",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 111",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 112",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 208",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 209",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 210",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1381,
+    "y": 2367,
+    "normX": 0.407,
+    "normY": 0.605,
+    "description": "IB rib 7 - IB Block",
+    "facilities": [
+      "Dept of EEE"
+    ],
+    "nearestNode": "089",
+    "offsetDistance": 94
+  },
+  {
+    "id": "ib-rib-8",
+    "name": "IB rib 8",
+    "shortName": "IB rib 8",
+    "aliases": [
+      "ib rib 8",
+      "ib-rib-8",
+      "gurugulam",
+      "ib block",
+      "electronics lab",
+      "advanced embedded lab 1",
+      "advanced embedded lab 2",
+      "advanced embedded lab 3",
+      "electrical machines and drivers lab"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Electronics Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Advanced Embedded Lab 1",
+          "Advanced Embedded Lab 2",
+          "Advanced Embedded Lab 3"
+        ],
+        "name": "Second Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Electrical Machines and Drivers Lab"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Electronics Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Advanced Embedded Lab 1",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Advanced Embedded Lab 2",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Advanced Embedded Lab 3",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Electrical Machines and Drivers Lab",
+        "floorName": "First Floor"
+      }
+    ],
+    "x": 1197,
+    "y": 2367,
+    "normX": 0.353,
+    "normY": 0.605,
+    "description": "IB rib 8 - IB Block",
+    "facilities": [
+      "gurugulam"
+    ],
+    "nearestNode": "121",
+    "offsetDistance": 89
+  },
+  {
+    "id": "ib-rib-9",
+    "name": "IB rib 9",
+    "shortName": "IB rib 9",
+    "aliases": [
+      "ib rib 9",
+      "ib-rib-9",
+      "ib block",
+      "industry exploration and collaboration cell (iecc)",
+      "ww 101",
+      "ww 102",
+      "ww 103",
+      "ww 201",
+      "ww 202"
+    ],
+    "category": "academic_rib",
+    "type": "academic_rib",
+    "building": "IB Block",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Industry Exploration and Collaboration cell (IECC)"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "WW 101",
+          "WW 102",
+          "WW 103"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "WW 201",
+          "WW 202"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Industry Exploration and Collaboration cell (IECC)",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "WW 101",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 102",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 103",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "WW 201",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "WW 202",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 1414,
+    "y": 2493,
+    "normX": 0.417,
+    "normY": 0.637,
+    "description": "IB rib 9 - IB Block",
+    "facilities": [],
+    "nearestNode": "084",
+    "offsetDistance": 71
+  },
+  {
+    "id": "indoor-gym",
+    "name": "Gym",
+    "shortName": "Gym",
+    "aliases": [
+      "gym",
+      "indoor-gym",
+      "fitness",
+      "hostel gate",
+      "hostel manager cabin",
+      "boys gym",
+      "yoga centre"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Hostel Gate",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Hostel Manager Cabin"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Boys Gym"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Yoga Centre"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Hostel Manager Cabin",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Boys Gym",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Yoga Centre",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 2775,
+    "y": 2688,
+    "normX": 0.818,
+    "normY": 0.687,
+    "description": "Gym - Hostel Gate",
+    "facilities": [
+      "fitness"
+    ],
+    "nearestNode": "073",
+    "offsetDistance": 314
+  },
+  {
+    "id": "internet-centre",
+    "name": "Internet Centre",
+    "shortName": "Internet Centre",
+    "aliases": [
+      "internet centre",
+      "internet-centre",
+      "coe",
+      "chrome os",
+      "ib block",
+      "controller of examination (coe)",
+      "coe office"
+    ],
+    "category": "amenity",
+    "type": "amenity",
+    "building": "IB Block",
+    "floor": "2 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Internet Centre"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Controller of Examination (COE)",
+          "CoE Office"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Internet Centre",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Controller of Examination (COE)",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "CoE Office",
+        "floorName": "First Floor"
+      }
+    ],
+    "x": 1398,
+    "y": 2712,
+    "normX": 0.412,
+    "normY": 0.693,
+    "description": "Internet Centre - IB Block",
+    "facilities": [
+      "COE",
+      "Chrome OS"
+    ],
+    "nearestNode": "086",
+    "offsetDistance": 108
+  },
+  {
+    "id": "library",
+    "name": "LC",
+    "shortName": "LC",
+    "aliases": [
+      "lc",
+      "library",
+      "learning centre",
+      "entrance",
+      "girls depository",
+      "digital library",
+      "learning centre discussion room- 1 i floor",
+      "learning centre discussion room- 2 i floor",
+      "learning centre conference hall - i floor",
+      "learning centre conference hall - ii floor",
+      "learning centre discussion room- 1 ii floor",
+      "learning centre discussion room- 2 ii floor",
+      "learning centre conference hall - iii floor",
+      "learning centre discussion room- 1 iii floor",
+      "learning centre discussion room- 2 iii floor",
+      "ssg - cs cluster",
+      "learning centre discussion room- 1 iv floor",
+      "learning centre discussion room- 2 iv floor",
+      "learning centre conference hall - iv floor"
+    ],
+    "category": "amenity",
+    "type": "amenity",
+    "building": "learning centre",
+    "floor": "5 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Entrance",
+          "Girls Depository"
+        ]
+      },
+      {
+        "rooms": [
+          "Digital Library",
+          "LEARNING CENTRE DISCUSSION ROOM- 1 I FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 2 I FLOOR",
+          "LEARNING CENTRE CONFERENCE HALL - I FLOOR"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Library",
+          "LEARNING CENTRE CONFERENCE HALL - II FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 1 II FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 2 II FLOOR"
+        ]
+      },
+      {
+        "rooms": [
+          "Library",
+          "LEARNING CENTRE CONFERENCE HALL - III FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 1 III FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 2 III FLOOR"
+        ],
+        "name": "Third Floor"
+      },
+      {
+        "name": "Fourth Floor",
+        "rooms": [
+          "SSG - CS cluster",
+          "LEARNING CENTRE DISCUSSION ROOM- 1 IV FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 2 IV FLOOR",
+          "LEARNING CENTRE CONFERENCE HALL - IV FLOOR"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Entrance",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Girls Depository",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Digital Library",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE DISCUSSION ROOM- 1 I FLOOR",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE DISCUSSION ROOM- 2 I FLOOR",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE CONFERENCE HALL - I FLOOR",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Library",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE CONFERENCE HALL - II FLOOR",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE DISCUSSION ROOM- 1 II FLOOR",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE DISCUSSION ROOM- 2 II FLOOR",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Library",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE CONFERENCE HALL - III FLOOR",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE DISCUSSION ROOM- 1 III FLOOR",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE DISCUSSION ROOM- 2 III FLOOR",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "SSG - CS cluster",
+        "floorName": "Fourth Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE DISCUSSION ROOM- 1 IV FLOOR",
+        "floorName": "Fourth Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE DISCUSSION ROOM- 2 IV FLOOR",
+        "floorName": "Fourth Floor"
+      },
+      {
+        "roomName": "LEARNING CENTRE CONFERENCE HALL - IV FLOOR",
+        "floorName": "Fourth Floor"
+      }
+    ],
+    "x": 1533,
+    "y": 2813,
+    "normX": 0.452,
+    "normY": 0.719,
+    "description": "LC - learning centre",
+    "facilities": [
+      "LC",
+      "learning centre"
+    ],
+    "nearestNode": "086",
+    "offsetDistance": 179
+  },
+  {
+    "id": "main-aduit",
+    "name": "Main Auditorium ",
+    "shortName": "Main Auditorium",
+    "aliases": [
+      "main auditorium ",
+      "main-aduit",
+      "auditorium",
+      "bit auditorium"
+    ],
+    "category": "auditorium",
+    "type": "auditorium",
+    "building": "Main Auditorium ",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1526,
+    "y": 2645,
+    "normX": 0.45,
+    "normY": 0.676,
+    "description": "Main Auditorium ",
+    "facilities": [
+      "auditorium",
+      "bit auditorium"
+    ],
+    "nearestNode": "086",
+    "offsetDistance": 46
+  },
+  {
+    "id": "mechanic-back",
+    "name": "Mechanic Block",
+    "shortName": "Mechanic Block",
+    "aliases": [
+      "mechanic block",
+      "mechanic-back",
+      "dept of mech",
+      "basic workshop",
+      "inventory area",
+      "special machinery shop",
+      "strength of materials lab",
+      "lathe shop",
+      "meteorology lab",
+      "fluid mechanics lab",
+      "aqua sub-bit research lab",
+      "thermal engineering lab",
+      "kinematics & dynamics lab",
+      "harita lab (computer lab-19)",
+      "computer lab-20",
+      "computer lab-21",
+      "computer lab-22",
+      "computer lab-23",
+      "cad lab (computer lab-24)",
+      "computer lab-25",
+      "computer lab-26",
+      "ct lab",
+      "heat transfer lab",
+      "industrial safety lab",
+      "drawing hall 1",
+      "godrej excellence centre",
+      "unit operation lab (agricultural lab)",
+      "automotive electrical & electronics lab",
+      "renewable energy & hvac lab",
+      "metallargy lab"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "Mechanic Block",
+    "floor": "4 Floors",
+    "floors": [
+      {
+        "name": "Base Floor",
+        "rooms": [
+          "Basic Workshop",
+          "Inventory Area"
+        ]
+      },
+      {
+        "rooms": [
+          "Special Machinery Shop",
+          "Strength of Materials Lab",
+          "Lathe Shop",
+          "Meteorology Lab",
+          "Fluid Mechanics Lab",
+          "AQUA SUB-BIT Research Lab",
+          "Thermal Engineering Lab",
+          "Kinematics & Dynamics lab"
+        ],
+        "name": "Ground floor"
+      },
+      {
+        "rooms": [
+          "Harita Lab (Computer Lab-19)",
+          "Computer Lab-20",
+          "Computer Lab-21",
+          "Computer Lab-22",
+          "Computer Lab-23",
+          "CAD lab (Computer Lab-24)",
+          "Computer Lab-25",
+          "Computer Lab-26",
+          "CT lab"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Heat Transfer Lab",
+          "Industrial Safety Lab",
+          "Drawing Hall 1",
+          "Godrej Excellence centre",
+          "Unit Operation lab (Agricultural lab)",
+          "Automotive Electrical & Electronics lab",
+          "Renewable Energy & HVAC lab",
+          "Metallargy Lab"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Basic Workshop",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "Inventory Area",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "Special Machinery Shop",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Strength of Materials Lab",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Lathe Shop",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Meteorology Lab",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Fluid Mechanics Lab",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "AQUA SUB-BIT Research Lab",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Thermal Engineering Lab",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Kinematics & Dynamics lab",
+        "floorName": "Ground floor"
+      },
+      {
+        "roomName": "Harita Lab (Computer Lab-19)",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-20",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-21",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-22",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-23",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "CAD lab (Computer Lab-24)",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-25",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-26",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "CT lab",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Heat Transfer Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Industrial Safety Lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Drawing Hall 1",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Godrej Excellence centre",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Unit Operation lab (Agricultural lab)",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Automotive Electrical & Electronics lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Renewable Energy & HVAC lab",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Metallargy Lab",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 2480,
+    "y": 2140,
+    "normX": 0.731,
+    "normY": 0.547,
+    "description": "Mechanic Block - Mechanic Block",
+    "facilities": [
+      "dept of mech"
+    ],
+    "nearestNode": "064",
+    "offsetDistance": 433
+  },
+  {
+    "id": "mechanic-front",
+    "name": "Mech Block Entrance",
+    "shortName": "Mech Block Entrance",
+    "aliases": [
+      "mech block entrance",
+      "mechanic-front",
+      "school of mechanics",
+      "dept of mech",
+      "dept of aero",
+      "dept of agri",
+      "mechanic block",
+      "cyber security lab",
+      "dept of library",
+      "me 001 (industrial safety engineering)",
+      "me 002",
+      "me 003",
+      "me 004",
+      "me 005",
+      "smart classroom",
+      "me 101",
+      "me 102",
+      "me 103",
+      "me 104",
+      "me 105",
+      "me 106",
+      "me 107",
+      "me 108",
+      "dept of aids",
+      "computer lab-18",
+      "me 201",
+      "me 202",
+      "me 203",
+      "me 204",
+      "me 205",
+      "me 206",
+      "faculty hall 1",
+      "dept of agriculture",
+      "me 301",
+      "me 302",
+      "me 303",
+      "me 304",
+      "me 305",
+      "me 306",
+      "faculty hall 2"
+    ],
+    "category": "gates",
+    "type": "gates",
+    "building": "Mechanic Block",
+    "floor": "4 Floors",
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of Mech",
+          "Cyber Security Lab",
+          "Dept of Library",
+          "ME 001 (Industrial Safety engineering)",
+          "ME 002",
+          "ME 003",
+          "ME 004",
+          "ME 005",
+          "Smart classroom"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "ME 101",
+          "ME 102",
+          "ME 103",
+          "ME 104",
+          "ME 105",
+          "ME 106",
+          "ME 107",
+          "ME 108",
+          "Dept of AIDS",
+          "Computer lab-18"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "ME 201",
+          "ME 202",
+          "ME 203",
+          "ME 204",
+          "ME 205",
+          "ME 206",
+          "Faculty hall 1"
+        ]
+      },
+      {
+        "rooms": [
+          "Dept of Agriculture",
+          "ME 301",
+          "ME 302",
+          "ME 303",
+          "ME 304",
+          "ME 305",
+          "ME 306",
+          "Faculty hall 2"
+        ],
+        "name": "Third Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of Mech",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Cyber Security Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Dept of Library",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "ME 001 (Industrial Safety engineering)",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "ME 002",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "ME 003",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "ME 004",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "ME 005",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Smart classroom",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "ME 101",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ME 102",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ME 103",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ME 104",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ME 105",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ME 106",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ME 107",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ME 108",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Dept of AIDS",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer lab-18",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "ME 201",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "ME 202",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "ME 203",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "ME 204",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "ME 205",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "ME 206",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Faculty hall 1",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Dept of Agriculture",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "ME 301",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "ME 302",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "ME 303",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "ME 304",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "ME 305",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "ME 306",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "Faculty hall 2",
+        "floorName": "Third Floor"
+      }
+    ],
+    "x": 2201,
+    "y": 2199,
+    "normX": 0.649,
+    "normY": 0.562,
+    "description": "Mech Block Entrance - Mechanic Block",
+    "facilities": [
+      "school of mechanics",
+      "dept of mech",
+      "dept of aero",
+      "dept of agri"
+    ],
+    "nearestNode": "064",
+    "offsetDistance": 176
+  },
+  {
+    "id": "medical-center",
+    "name": "Medical Center",
+    "shortName": "Medical Center",
+    "aliases": [
+      "medical center",
+      "medical-center"
+    ],
+    "category": "amenity",
+    "type": "amenity",
+    "building": "Medical Center",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 522,
+    "y": 3040,
+    "normX": 0.154,
+    "normY": 0.777,
+    "description": "Medical Center",
+    "facilities": [],
+    "nearestNode": "169",
+    "offsetDistance": 124
+  },
+  {
+    "id": "narmadha-hostel",
+    "name": "Narmadha Hostel",
+    "shortName": "Narmadha Hostel",
+    "aliases": [
+      "narmadha hostel",
+      "narmadha-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Narmadha Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 563,
+    "y": 3318,
+    "normX": 0.166,
+    "normY": 0.848,
+    "description": "Narmadha Hostel",
+    "facilities": [],
+    "nearestNode": "183",
+    "offsetDistance": 236
+  },
+  {
+    "id": "north-bhavani",
+    "name": "North Bhavani",
+    "shortName": "North Bhavani",
+    "aliases": [
+      "north bhavani",
+      "north-bhavani"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "North Bhavani",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1333,
+    "y": 3498,
+    "normX": 0.393,
+    "normY": 0.894,
+    "description": "North Bhavani",
+    "facilities": [],
+    "nearestNode": "180",
+    "offsetDistance": 216
+  },
+  {
+    "id": "pearl-hostel",
+    "name": "Pearl Hostel",
+    "shortName": "Pearl Hostel",
+    "aliases": [
+      "pearl hostel",
+      "pearl-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Pearl Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 3063,
+    "y": 3506,
+    "normX": 0.903,
+    "normY": 0.896,
+    "description": "Pearl Hostel",
+    "facilities": [],
+    "nearestNode": "076",
+    "offsetDistance": 591
+  },
+  {
+    "id": "placement-and-training",
+    "name": "Placement and Training Cell",
+    "shortName": "Placement and Training Cell",
+    "aliases": [
+      "placement and training cell",
+      "placement-and-training",
+      "placement",
+      "ib block",
+      "dept of training and placement",
+      "training & placement conference hall 1",
+      "training & placement conference hall 2",
+      "vedhanayagam auditorium"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "IB Block",
+    "floor": "2 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Dept of Training and Placement",
+          "Training & Placement Conference Hall 1",
+          "Training & Placement Conference Hall 2"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Vedhanayagam Auditorium"
+        ],
+        "name": "First Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Dept of Training and Placement",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Training & Placement Conference Hall 1",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Training & Placement Conference Hall 2",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Vedhanayagam Auditorium",
+        "floorName": "First Floor"
+      }
+    ],
+    "x": 1208,
+    "y": 2716,
+    "normX": 0.356,
+    "normY": 0.694,
+    "description": "Placement and Training Cell - IB Block",
+    "facilities": [
+      "Placement"
+    ],
+    "nearestNode": "118",
+    "offsetDistance": 124
+  },
+  {
+    "id": "radio-centre",
+    "name": "Community Radio Centre",
+    "shortName": "Community Radio Centre",
+    "aliases": [
+      "community radio centre",
+      "radio-centre"
+    ],
+    "category": "amenity",
+    "type": "amenity",
+    "building": "Community Radio Centre",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1150,
+    "y": 2829,
+    "normX": 0.339,
+    "normY": 0.723,
+    "description": "Community Radio Centre",
+    "facilities": [],
+    "nearestNode": "194",
+    "offsetDistance": 65
+  },
+  {
+    "id": "recreation-hall",
+    "name": "Recreation Hall",
+    "shortName": "Recreation Hall",
+    "aliases": [
+      "recreation hall",
+      "recreation-hall",
+      "shop",
+      "store",
+      "gift",
+      "mobile",
+      "cafeteria",
+      "conventional store",
+      "gift shop",
+      "mobile shop"
+    ],
+    "category": "dining",
+    "type": "dining",
+    "building": "Cafeteria",
+    "floor": "2 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Conventional Store",
+          "Gift Shop",
+          "Mobile Shop"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Recreation Hall"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Conventional Store",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Gift Shop",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Mobile Shop",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Recreation Hall",
+        "floorName": "First Floor"
+      }
+    ],
+    "x": 1591,
+    "y": 3068,
+    "normX": 0.469,
+    "normY": 0.784,
+    "description": "Recreation Hall - Cafeteria",
+    "facilities": [
+      "shop",
+      "store",
+      "gift",
+      "mobile"
+    ],
+    "nearestNode": "080",
+    "offsetDistance": 142
+  },
+  {
+    "id": "research park",
+    "name": "Research Park-Left Wing",
+    "shortName": "Research Park-Left Wing",
+    "aliases": [
+      "research park-left wing",
+      "research park",
+      "research park-left\n",
+      "alumni office",
+      "",
+      "student affairs",
+      "mh 302",
+      "mh 303",
+      "mh 304",
+      "mh 305",
+      "mh 306"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "research park-left\n",
+    "floor": "4 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Alumni office"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          ""
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "student affairs"
+        ]
+      },
+      {
+        "name": "Third Floor",
+        "rooms": [
+          "MH 302",
+          "MH 303",
+          "MH 304",
+          "MH 305",
+          "MH 306"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Alumni office",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "student affairs",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "MH 302",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "MH 303",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "MH 304",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "MH 305",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "MH 306",
+        "floorName": "Third Floor"
+      }
+    ],
+    "x": 2154,
+    "y": 1213,
+    "normX": 0.635,
+    "normY": 0.31,
+    "description": "Research Park-Left Wing - research park-left\n",
+    "facilities": [
+      "research park"
+    ],
+    "nearestNode": "009",
+    "offsetDistance": 209
+  },
+  {
+    "id": "research-park-right",
+    "name": "Research Park-Right wing",
+    "shortName": "Research Park-Right wing",
+    "aliases": [
+      "research park-right wing",
+      "research-park-right",
+      "ae 301",
+      "ae 302",
+      "student affairs",
+      "principal office"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "Research Park-Right wing",
+    "floor": "3 Floors",
+    "floors": [
+      {
+        "name": "Third Floor",
+        "rooms": [
+          "AE 301",
+          "AE 302"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Student Affairs"
+        ]
+      },
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Principal Office"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "AE 301",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "AE 302",
+        "floorName": "Third Floor"
+      },
+      {
+        "roomName": "Student Affairs",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Principal Office",
+        "floorName": "Ground Floor"
+      }
+    ],
+    "x": 2157,
+    "y": 1600,
+    "normX": 0.636,
+    "normY": 0.409,
+    "description": "Research Park-Right wing - Research Park-Right wing",
+    "facilities": [],
+    "nearestNode": "030",
+    "offsetDistance": 264
+  },
+  {
+    "id": "ruby-hostel",
+    "name": "Ruby Hostel",
+    "shortName": "Ruby Hostel",
+    "aliases": [
+      "ruby hostel",
+      "ruby-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Ruby Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 2924,
+    "y": 3252,
+    "normX": 0.862,
+    "normY": 0.831,
+    "description": "Ruby Hostel",
+    "facilities": [],
+    "nearestNode": "076",
+    "offsetDistance": 304
+  },
+  {
+    "id": "sapphire-hostel",
+    "name": "Sapphire Hostel",
+    "shortName": "Sapphire Hostel",
+    "aliases": [
+      "sapphire hostel",
+      "sapphire-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Sapphire Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 2486,
+    "y": 3263,
+    "normX": 0.733,
+    "normY": 0.834,
+    "description": "Sapphire Hostel",
+    "facilities": [],
+    "nearestNode": "078",
+    "offsetDistance": 245
+  },
+  {
+    "id": "sf-block",
+    "name": "SF Block",
+    "shortName": "SF Block",
+    "aliases": [
+      "sf block",
+      "sf-block",
+      "dept of it",
+      "dept of cse",
+      "dept of aiml",
+      "school of computing",
+      "sunflower block",
+      "sf b01",
+      "sf b02",
+      "sf b03",
+      "sf seminar hall 1",
+      "sf seminar hall 2",
+      "nss office",
+      "sf 101",
+      "sf 102",
+      "department of information technology",
+      "ai lab (computer lab-2)",
+      "it dept discussion room",
+      "sf 103",
+      "department of computer science and engineering",
+      "computer lab-7",
+      "cse dept discussion room",
+      "sf 201",
+      "sf 202",
+      "sf 203",
+      "sf seminar hall 3"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "Sunflower Block",
+    "floor": "4 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "SF B01",
+          "SF B02",
+          "SF B03",
+          "SF Seminar Hall 1",
+          "SF Seminar Hall 2",
+          "NSS office"
+        ],
+        "name": "Base Floor"
+      },
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "SF 101",
+          "SF 102",
+          "Department of Information Technology",
+          "AI Lab (computer lab-2)",
+          "IT Dept Discussion room"
+        ]
+      },
+      {
+        "rooms": [
+          "SF 101",
+          "SF 102",
+          "SF 103",
+          "Department of Computer Science and Engineering",
+          "Computer Lab-7",
+          "CSE Dept Discussion room"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "SF 201",
+          "SF 202",
+          "SF 203",
+          "SF Seminar Hall 3"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "SF B01",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "SF B02",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "SF B03",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "SF Seminar Hall 1",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "SF Seminar Hall 2",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "NSS office",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "SF 101",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "SF 102",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Department of Information Technology",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "AI Lab (computer lab-2)",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "IT Dept Discussion room",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "SF 101",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "SF 102",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "SF 103",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Department of Computer Science and Engineering",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-7",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "CSE Dept Discussion room",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "SF 201",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "SF 202",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "SF 203",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "SF Seminar Hall 3",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 2215,
+    "y": 1953,
+    "normX": 0.653,
+    "normY": 0.499,
+    "description": "SF Block - Sunflower Block",
+    "facilities": [
+      "dept of it",
+      "dept of cse",
+      "dept of aiml",
+      "SF Block",
+      "school of computing",
+      "sunflower block"
+    ],
+    "nearestNode": "031",
+    "offsetDistance": 202
+  },
+  {
+    "id": "sf-block-labs",
+    "name": "SF Block Labs",
+    "shortName": "SF Block Labs",
+    "aliases": [
+      "sf block labs",
+      "sf-block-labs",
+      "sunflower block",
+      "labs",
+      "school of management studies",
+      "data mining lab (computer lab-3)",
+      "cloud computing lab (computer lab-4)",
+      "dbms lab (computer lab-5)",
+      "programming lab",
+      "faculty hall-5",
+      "project lab (computer lab-6)",
+      "computer lab-10",
+      "computer lab-9",
+      "computer lab-8",
+      "aiml labs",
+      "computer lab-12",
+      "computer lab-13",
+      "computer lab-14",
+      "computer lab-15"
+    ],
+    "category": "labs",
+    "type": "labs",
+    "building": "Sunflower Block",
+    "floor": "4 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "School Of Management Studies"
+        ],
+        "name": "Base Floor"
+      },
+      {
+        "rooms": [
+          "Data Mining Lab (computer lab-3)",
+          "Cloud Computing Lab (computer lab-4)",
+          "DBMS Lab (computer lab-5)",
+          "Programming Lab",
+          "Faculty Hall-5",
+          "Project Lab (computer lab-6)"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Computer Lab-10",
+          "Computer Lab-9",
+          "Computer Lab-8"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "AIML Labs",
+          "Computer Lab-12",
+          "Computer Lab-13",
+          "Computer Lab-14",
+          "Computer Lab-15"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "School Of Management Studies",
+        "floorName": "Base Floor"
+      },
+      {
+        "roomName": "Data Mining Lab (computer lab-3)",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Cloud Computing Lab (computer lab-4)",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "DBMS Lab (computer lab-5)",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Programming Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Faculty Hall-5",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Project Lab (computer lab-6)",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Computer Lab-10",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-9",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "Computer Lab-8",
+        "floorName": "First Floor"
+      },
+      {
+        "roomName": "AIML Labs",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Computer Lab-12",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Computer Lab-13",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Computer Lab-14",
+        "floorName": "Second Floor"
+      },
+      {
+        "roomName": "Computer Lab-15",
+        "floorName": "Second Floor"
+      }
+    ],
+    "x": 2486,
+    "y": 1921,
+    "normX": 0.733,
+    "normY": 0.491,
+    "description": "SF Block Labs - Sunflower Block",
+    "facilities": [
+      "sunflower block",
+      "labs"
+    ],
+    "nearestNode": "031",
+    "offsetDistance": 451
+  },
+  {
+    "id": "shuttle-court",
+    "name": "Shuttle Court",
+    "shortName": "Shuttle Court",
+    "aliases": [
+      "shuttle court",
+      "shuttle-court",
+      "badminton court"
+    ],
+    "category": "sports",
+    "type": "sports",
+    "building": "Shuttle Court",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 885,
+    "y": 1377,
+    "normX": 0.261,
+    "normY": 0.352,
+    "description": "Shuttle Court",
+    "facilities": [
+      "shuttle court",
+      "badminton court"
+    ],
+    "nearestNode": "011",
+    "offsetDistance": 192
+  },
+  {
+    "id": "south-bhavani",
+    "name": "South Bhavani",
+    "shortName": "South Bhavani",
+    "aliases": [
+      "south bhavani",
+      "south-bhavani"
+    ],
+    "category": "academic",
+    "type": "academic",
+    "building": "South Bhavani",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1353,
+    "y": 3710,
+    "normX": 0.399,
+    "normY": 0.948,
+    "description": "South Bhavani",
+    "facilities": [],
+    "nearestNode": "180",
+    "offsetDistance": 421
+  },
+  {
+    "id": "spinning-lab",
+    "name": "Spinning Lab",
+    "shortName": "Spinning Lab",
+    "aliases": [
+      "spinning lab",
+      "spinning-lab",
+      "as block"
+    ],
+    "category": "labs",
+    "type": "labs",
+    "building": "AS Block",
+    "floor": "2 Floors",
+    "floors": [
+      {
+        "rooms": [
+          "Spinning Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Spinning Lab"
+        ],
+        "name": "First Floor"
+      }
+    ],
+    "rooms": [
+      {
+        "roomName": "Spinning Lab",
+        "floorName": "Ground Floor"
+      },
+      {
+        "roomName": "Spinning Lab",
+        "floorName": "First Floor"
+      }
+    ],
+    "x": 1832,
+    "y": 2661,
+    "normX": 0.54,
+    "normY": 0.68,
+    "description": "Spinning Lab - AS Block",
+    "facilities": [],
+    "nearestNode": "049",
+    "offsetDistance": 53
+  },
+  {
+    "id": "tenniscourt-1",
+    "name": "Tennis Court 1",
+    "shortName": "Tennis Court 1",
+    "aliases": [
+      "tennis court 1",
+      "tenniscourt-1"
+    ],
+    "category": "sports",
+    "type": "sports",
+    "building": "Tennis Court 1",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1811,
+    "y": 3303,
+    "normX": 0.534,
+    "normY": 0.844,
+    "description": "Tennis Court 1",
+    "facilities": [],
+    "nearestNode": "080",
+    "offsetDistance": 225
+  },
+  {
+    "id": "tenniscourt-2",
+    "name": "Tennis Court 2",
+    "shortName": "Tennis Court 2",
+    "aliases": [
+      "tennis court 2",
+      "tenniscourt-2"
+    ],
+    "category": "sports",
+    "type": "sports",
+    "building": "Tennis Court 2",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1933,
+    "y": 3299,
+    "normX": 0.57,
+    "normY": 0.843,
+    "description": "Tennis Court 2",
+    "facilities": [],
+    "nearestNode": "079",
+    "offsetDistance": 279
+  },
+  {
+    "id": "testing-1",
+    "name": "agri ground",
+    "shortName": "agri ground",
+    "aliases": [
+      "agri ground",
+      "testing-1"
+    ],
+    "category": "sports",
+    "type": "sports",
+    "building": "agri ground",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1564,
+    "y": 693,
+    "normX": 0.461,
+    "normY": 0.177,
+    "description": "agri ground",
+    "facilities": [],
+    "nearestNode": "002",
+    "offsetDistance": 134
+  },
+  {
+    "id": "volleyball-court",
+    "name": "Volleyball Court ",
+    "shortName": "Volleyball Court",
+    "aliases": [
+      "volleyball court ",
+      "volleyball-court"
+    ],
+    "category": "sports",
+    "type": "sports",
+    "building": "Volleyball Court ",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1564,
+    "y": 3306,
+    "normX": 0.461,
+    "normY": 0.845,
+    "description": "Volleyball Court ",
+    "facilities": [],
+    "nearestNode": "180",
+    "offsetDistance": 167
+  },
+  {
+    "id": "yamuna-hostel",
+    "name": "Yamuna Hostel",
+    "shortName": "Yamuna Hostel",
+    "aliases": [
+      "yamuna hostel",
+      "yamuna-hostel"
+    ],
+    "category": "hostels",
+    "type": "hostels",
+    "building": "Yamuna Hostel",
+    "floor": "Ground Floor",
+    "floors": [],
+    "rooms": [],
+    "x": 1299,
+    "y": 3283,
+    "normX": 0.383,
+    "normY": 0.839,
+    "description": "Yamuna Hostel",
+    "facilities": [],
+    "nearestNode": "180",
+    "offsetDistance": 99
+  }
+]

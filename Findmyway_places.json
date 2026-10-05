@@ -1,0 +1,2047 @@
+[
+  {
+    "id": "as-main-left",
+    "name": "AS Block",
+    "description": "AS Block",
+    "normX": 0.477,
+    "normY": 0.466,
+    "x": 1618,
+    "y": 1823,
+    "floors": [
+      {
+        "rooms": [
+          "CS 109",
+          "New Product Development Lab",
+          "Digital Marketing Lab",
+          "IT Operations"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Dept of IST",
+          "ISE Lab 1",
+          "ISE Lab 2",
+          "Robotics & Automation Lab"
+        ],
+        "name": "First floor"
+      },
+      {
+        "rooms": [
+          "Discussion Room",
+          "Conference Room",
+          "Data Science Lab",
+          "AR/VR Lab"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Special Labs",
+      "Dept of ISE",
+      "AS Block"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-main-right",
+    "name": "AS Special Labs",
+    "description": "AS Block",
+    "normX": 0.533,
+    "normY": 0.469,
+    "x": 1808,
+    "y": 1835,
+    "floors": [
+      {
+        "name": "Base Floor",
+        "rooms": [
+          "MF Lab",
+          "Agricultural Vehicle",
+          "Kart Vehicle",
+          "Electrical Vehicle"
+        ]
+      },
+      {
+        "rooms": [
+          "CB 101",
+          "Block Chain Tech Lab",
+          "NLP Lab",
+          "World Skill Training Centre"
+        ],
+        "name": "Ground floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Dept of CSBS",
+          "CSBS Lab 1",
+          "Math Experience Centre",
+          "Embedded Technology Lab"
+        ]
+      },
+      {
+        "rooms": [
+          "IoT Lab",
+          "Cloud Computing Lab",
+          "Communication Lab",
+          "Micro Prototyping Lab",
+          "Hackathon Lab",
+          "Special lab Conference Hall 1",
+          "Special lab Conference Hall 2",
+          "Full Stack Lab - I",
+          "Full Stack Lab - II",
+          "Full Stack Lab - III"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Special Labs",
+      "Dept of CSBS",
+      "AS Block"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-1",
+    "name": "AS rib 1",
+    "description": "AS Block",
+    "normX": 0.482,
+    "normY": 0.519,
+    "x": 1635,
+    "y": 2031,
+    "floors": [
+      {
+        "rooms": [
+          "Dept of Biomedical Engineering",
+          "Biomedical Faculty Hall"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "EW 113",
+          "EW 114",
+          "EW 115"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "EW 213",
+          "EW 214",
+          "EW 215"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of Biomedical"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-10",
+    "name": "AS rib 10",
+    "description": "AS Block",
+    "normX": 0.544,
+    "normY": 0.631,
+    "x": 1845,
+    "y": 2469,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Chemical Processing Lab"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Apparel Testing Lab",
+          "Textile Testing Lab"
+        ]
+      },
+      {
+        "rooms": [
+          "VLSI Design Lab",
+          "Digital Electronic Lab",
+          "Microprocessor Lab"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-11",
+    "name": "AS rib 11",
+    "description": "AS Block",
+    "normX": 0.493,
+    "normY": 0.663,
+    "x": 1672,
+    "y": 2594,
+    "floors": [
+      {
+        "rooms": [
+          "Dept of Textile Technology",
+          "Textile Seminar Hall"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "EW 104",
+          "EW 105",
+          "EW 106"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "EW 204",
+          "EW 205",
+          "EW 206"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of Textile Tech",
+      "TX"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-12",
+    "name": "AS rib 12",
+    "description": "AS Block",
+    "normX": 0.537,
+    "normY": 0.662,
+    "x": 1822,
+    "y": 2590,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Servo Motion Control lab",
+          "Weaving Lab"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Food Technology Lab"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Food Analysis Lab",
+          "Food Tech Lab 2"
+        ]
+      }
+    ],
+    "terms": [
+      "gurugulam",
+      "Food microbiology"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-2",
+    "name": "AS rib 2",
+    "description": "AS Block",
+    "normX": 0.536,
+    "normY": 0.514,
+    "x": 1818,
+    "y": 2011,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of Chemistry",
+          "Chemistry Lab 1"
+        ]
+      },
+      {
+        "rooms": [
+          "Language Lab",
+          "ELCC Cell",
+          "Dept of Humanities",
+          "ELCC smart class",
+          "ELCC library"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Physics Lab 1"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of Chemistry"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-3",
+    "name": "AS rib 3",
+    "description": "AS Block",
+    "normX": 0.481,
+    "normY": 0.546,
+    "x": 1632,
+    "y": 2136,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of Civil Engineering",
+          "Conference Hall"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "EW 116",
+          "EW 117",
+          "EW 118"
+        ]
+      },
+      {
+        "rooms": [
+          "EW 216",
+          "EW 217",
+          "EW 218"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of Civil"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-4",
+    "name": "AS rib 4",
+    "description": "AS Block",
+    "normX": 0.542,
+    "normY": 0.541,
+    "x": 1838,
+    "y": 2117,
+    "floors": [
+      {
+        "rooms": [
+          "Signal Processing Lab",
+          "PCB Design Lab",
+          "PCB Fabrication Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Dept of Physics",
+          "Physics Lab 2"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Chemistry Lab 2"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of of physics"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-5",
+    "name": "AS rib 5",
+    "description": "AS Block",
+    "normX": 0.485,
+    "normY": 0.574,
+    "x": 1645,
+    "y": 2246,
+    "floors": [
+      {
+        "rooms": [
+          "Faculty Hall 2",
+          "Dept of ECE"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "EW 107",
+          "EW 108",
+          "EW 109"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "EW 207",
+          "EW 208",
+          "EW 209"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of ECE"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-6",
+    "name": "AS rib 6",
+    "description": "AS Block",
+    "normX": 0.54,
+    "normY": 0.576,
+    "x": 1832,
+    "y": 2254,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Soil Mechanic Lab"
+        ]
+      },
+      {
+        "rooms": [
+          "CADD & Survey Lab",
+          "Survey & Environmental Lab"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Biochemistry Lab",
+          "Physiology Lab"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of Civil",
+      "Dept of biomedical"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-7",
+    "name": "AS rib 7",
+    "description": "AS Block",
+    "normX": 0.485,
+    "normY": 0.602,
+    "x": 1645,
+    "y": 2356,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of ECE",
+          "ECE Seminar Hall",
+          "Faculty Hall 1"
+        ]
+      },
+      {
+        "rooms": [
+          "EW 111",
+          "EW 112"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "EW 210",
+          "EW 211",
+          "EW 212"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of ECE"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-8",
+    "name": "AS rib 8",
+    "description": "AS Block",
+    "normX": 0.531,
+    "normY": 0.597,
+    "x": 1801,
+    "y": 2336,
+    "floors": [
+      {
+        "rooms": [
+          "Analog electronic & IC Lab",
+          "Cyber - physical systems Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Networks Lab",
+          "Embedded Tech Lab",
+          "IoT Lab"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Analog & Digital communication Lab",
+          "Microwave & Optical Lab"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of ECE"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "as-rib-9",
+    "name": "AS rib 9",
+    "description": "AS Block",
+    "normX": 0.479,
+    "normY": 0.636,
+    "x": 1625,
+    "y": 2489,
+    "floors": [
+      {
+        "rooms": [
+          "Intellectual Property and Innovation cell"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "EW 101",
+          "EW 102",
+          "EW 103"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "EW 201",
+          "EW 202",
+          "EW 203"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of food Tech",
+      "FD"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "basketball-court",
+    "name": "BasketBall Court ",
+    "description": "",
+    "normX": 0.494,
+    "normY": 0.844,
+    "x": 1676,
+    "y": 3303,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "boys-visitor-hall",
+    "name": "Visitor hall (Boys)",
+    "description": "Boys Hostel Gate",
+    "normX": 0.639,
+    "normY": 0.711,
+    "x": 2167,
+    "y": 2782,
+    "floors": [
+      {
+        "rooms": [
+          "Boys Visitor Hall"
+        ],
+        "name": "Ground Floor"
+      }
+    ],
+    "terms": [],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "cafeteria",
+    "name": "Cafeteria",
+    "description": "mess",
+    "normX": 0.518,
+    "normY": 0.785,
+    "x": 1757,
+    "y": 3072,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "cauvery-hostel",
+    "name": "Cauvery Hostel",
+    "description": "",
+    "normX": 0.207,
+    "normY": 0.903,
+    "x": 702,
+    "y": 3533,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "coral-hostel",
+    "name": "Coral Hostel",
+    "description": "",
+    "normX": 0.629,
+    "normY": 0.659,
+    "x": 2134,
+    "y": 2579,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "cricket-ground",
+    "name": "Cricket Ground",
+    "description": "",
+    "normX": 0.205,
+    "normY": 0.618,
+    "x": 695,
+    "y": 2418,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "diamond-hostel",
+    "name": "Diamond Hostel",
+    "description": "",
+    "normX": 0.85,
+    "normY": 0.614,
+    "x": 2883,
+    "y": 2403,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "emerald-hostel",
+    "name": "Emerald Hostel",
+    "description": "",
+    "normX": 0.72,
+    "normY": 0.633,
+    "x": 2442,
+    "y": 2477,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "fashion-centre",
+    "name": "Fashion Resource Centre",
+    "description": "AS Block",
+    "normX": 0.482,
+    "normY": 0.69,
+    "x": 1635,
+    "y": 2700,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of Fashion Technology"
+        ]
+      },
+      {
+        "rooms": [
+          "Garment Construction Lab 1",
+          "Garment Construction Lab 2"
+        ],
+        "name": "First Floor"
+      }
+    ],
+    "terms": [
+      "Dept of Fashion Tech",
+      "FT"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "football-ground",
+    "name": "FootBall Ground",
+    "description": "",
+    "normX": 0.198,
+    "normY": 0.436,
+    "x": 672,
+    "y": 1706,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "ganga-hostel",
+    "name": "Ganga Hostel",
+    "description": "",
+    "normX": 0.241,
+    "normY": 0.843,
+    "x": 817,
+    "y": 3299,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "girls-mess",
+    "name": "Mess",
+    "description": "Girls Mess",
+    "normX": 0.518,
+    "normY": 0.797,
+    "x": 1757,
+    "y": 3119,
+    "floors": [
+      {
+        "rooms": [
+          "Mess"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Dance Hall",
+          "Girls Gym",
+          "Mess"
+        ],
+        "name": "First Floor"
+      }
+    ],
+    "terms": [
+      "food"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-block-1",
+    "name": "IB Block",
+    "description": "IB Block Right",
+    "normX": 0.4,
+    "normY": 0.471,
+    "x": 1357,
+    "y": 1843,
+    "floors": [
+      {
+        "rooms": [
+          "Dept of Mathematics",
+          "Maths Faculty Hall",
+          "Biotech Seminar Hall",
+          "Animal Cell Culture facility",
+          "WW 002",
+          "WW 003",
+          "WW 004",
+          "NCC"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Genetic Engineering Lab",
+          "Molecular Biology Lab",
+          "Dept of Bio-Technology",
+          "Plant Issue Culture Lab",
+          "Bio-Prospecting Research Lab",
+          "Student Counsellor Cabin",
+          "Unit Operations Lab",
+          "Excise Room"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "WW 216",
+          "WW 217",
+          "WW 218",
+          "WW 219",
+          "WW 220",
+          "WW 221"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of maths",
+      "Dept of Bio-Tech"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-block-2",
+    "name": "IB Block",
+    "description": "IB Block Left",
+    "normX": 0.347,
+    "normY": 0.471,
+    "x": 1177,
+    "y": 1843,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "WW 005",
+          "WW 006",
+          "WW 007",
+          "WW 008",
+          "Bio process Lab",
+          "Bio Energy Research Lab",
+          "WW 011",
+          "WW 012"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Nano Biotechnology Lab",
+          "Cell Biology Lab",
+          "Microbiology Lab",
+          "Chemical Engineering Lab"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "WW 222",
+          "WW 223",
+          "WW 224",
+          "WW 225",
+          "WW 226",
+          "WW 227"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of Bio-Tech"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-1",
+    "name": "IB rib 1",
+    "description": "IB Block",
+    "normX": 0.411,
+    "normY": 0.523,
+    "x": 1394,
+    "y": 2046,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of EIE",
+          "Yoga Center\n",
+          "E&I Seminar Hall"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "WW 113",
+          "WW 114",
+          "WW 115"
+        ]
+      },
+      {
+        "rooms": [
+          "WW 212",
+          "WW 211"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of EIE"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-10",
+    "name": "IB rib 10",
+    "description": "IB Block",
+    "normX": 0.356,
+    "normY": 0.641,
+    "x": 1208,
+    "y": 2508,
+    "floors": [
+      {
+        "name": "First Floor",
+        "rooms": [
+          "EEE Computer Centre 1",
+          "EEE Computer Centre 2"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Electrical Wiring Lab"
+        ]
+      },
+      {
+        "name": "Ground Floor\n",
+        "rooms": [
+          "Prototype Modelling Lab"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of EEE"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-11",
+    "name": "IB rib 11",
+    "description": "IB Block",
+    "normX": 0.413,
+    "normY": 0.666,
+    "x": 1401,
+    "y": 2606,
+    "floors": [
+      {
+        "rooms": [
+          "IECC Launch Pad",
+          "IECC Seminar Hall"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "WW 104",
+          "WW 105",
+          "WW 106"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "WW 203",
+          "WW 204",
+          "WW 205"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-12",
+    "name": "IB rib 12",
+    "description": "IB Block",
+    "normX": 0.359,
+    "normY": 0.665,
+    "x": 1218,
+    "y": 2602,
+    "floors": [
+      {
+        "rooms": [
+          "Salzer Lab",
+          "Networking Lab"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "PLC Lab"
+        ],
+        "name": "Second Floor"
+      },
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Welding Lab"
+        ]
+      }
+    ],
+    "terms": [],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-2",
+    "name": "IB rib 2",
+    "description": "IB Block",
+    "normX": 0.353,
+    "normY": 0.524,
+    "x": 1197,
+    "y": 2050,
+    "floors": [
+      {
+        "rooms": [
+          "BIT TBI Incubator",
+          "ß,α cave"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Idea Pad",
+          "Mission Control",
+          "Proto Lounge"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Fab Lab",
+          "Venture Space",
+          "Launch Pad"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-3",
+    "name": "IB rib 3",
+    "description": "IB Block",
+    "normX": 0.408,
+    "normY": 0.542,
+    "x": 1384,
+    "y": 2121,
+    "floors": [
+      {
+        "rooms": [
+          "Network Maintenance Cell (NMC)"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "WW 117",
+          "WW 118",
+          "WW 116"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "WW 213",
+          "WW 214",
+          "WW 215"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of AIDS"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-4",
+    "name": "IB rib 4",
+    "description": "IB Block",
+    "normX": 0.347,
+    "normY": 0.551,
+    "x": 1177,
+    "y": 2156,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Integrated Automation Technology Lab"
+        ]
+      },
+      {
+        "rooms": [
+          "Dept of  Mechatronics Engineering",
+          "Mechatronics Labs"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Dept of AIDS",
+          "AIDS Labs"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of CT",
+      "Dept of AIDS"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-5",
+    "name": "IB rib 5",
+    "description": "IB Block",
+    "normX": 0.407,
+    "normY": 0.577,
+    "x": 1381,
+    "y": 2258,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of EEE",
+          "EEE Seminar Hall"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "WW 107",
+          "WW 108",
+          "WW 109"
+        ]
+      },
+      {
+        "rooms": [
+          "WW 207",
+          "WW 206"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "Dept of EEE"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-6",
+    "name": "IB rib 6",
+    "description": "IB Block",
+    "normX": 0.352,
+    "normY": 0.585,
+    "x": 1194,
+    "y": 2289,
+    "floors": [
+      {
+        "rooms": [
+          "EIE Computer Centre",
+          "Process Control Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Industrial Instrumentation Lab",
+          "Advanced Embedded System Design Lab"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "EIE Conference Hall",
+          "EIE Smart Class Room",
+          "Sensor and Transducer Lab"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of EIE"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-7",
+    "name": "IB rib 7",
+    "description": "IB Block",
+    "normX": 0.407,
+    "normY": 0.605,
+    "x": 1381,
+    "y": 2367,
+    "floors": [
+      {
+        "rooms": [
+          "Faculty Hall"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "WW 110",
+          "WW 111",
+          "WW 112"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "WW 208",
+          "WW 209",
+          "WW 210"
+        ]
+      }
+    ],
+    "terms": [
+      "Dept of EEE"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-8",
+    "name": "IB rib 8",
+    "description": "IB Block",
+    "normX": 0.353,
+    "normY": 0.605,
+    "x": 1197,
+    "y": 2367,
+    "floors": [
+      {
+        "rooms": [
+          "Electronics Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Advanced Embedded Lab 1",
+          "Advanced Embedded Lab 2",
+          "Advanced Embedded Lab 3"
+        ],
+        "name": "Second Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Electrical Machines and Drivers Lab"
+        ]
+      }
+    ],
+    "terms": [
+      "gurugulam"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "ib-rib-9",
+    "name": "IB rib 9",
+    "description": "IB Block",
+    "normX": 0.417,
+    "normY": 0.637,
+    "x": 1414,
+    "y": 2493,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Industry Exploration and Collaboration cell (IECC)"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "WW 101",
+          "WW 102",
+          "WW 103"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "WW 201",
+          "WW 202"
+        ]
+      }
+    ],
+    "terms": [],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "indoor-gym",
+    "name": "Gym",
+    "description": "Hostel Gate",
+    "normX": 0.818,
+    "normY": 0.687,
+    "x": 2775,
+    "y": 2688,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Hostel Manager Cabin"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Boys Gym"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Yoga Centre"
+        ]
+      }
+    ],
+    "terms": [
+      "fitness"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "internet-centre",
+    "name": "Internet Centre",
+    "description": "IB Block",
+    "normX": 0.412,
+    "normY": 0.693,
+    "x": 1398,
+    "y": 2712,
+    "floors": [
+      {
+        "rooms": [
+          "Internet Centre"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Controller of Examination (COE)",
+          "CoE Office"
+        ]
+      }
+    ],
+    "terms": [
+      "COE",
+      "Chrome OS"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "library",
+    "name": "LC",
+    "description": "learning centre",
+    "normX": 0.452,
+    "normY": 0.719,
+    "x": 1533,
+    "y": 2813,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Entrance",
+          "Girls Depository"
+        ]
+      },
+      {
+        "rooms": [
+          "Digital Library",
+          "LEARNING CENTRE DISCUSSION ROOM- 1 I FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 2 I FLOOR",
+          "LEARNING CENTRE CONFERENCE HALL - I FLOOR"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Library",
+          "LEARNING CENTRE CONFERENCE HALL - II FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 1 II FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 2 II FLOOR"
+        ]
+      },
+      {
+        "rooms": [
+          "Library",
+          "LEARNING CENTRE CONFERENCE HALL - III FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 1 III FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 2 III FLOOR"
+        ],
+        "name": "Third Floor"
+      },
+      {
+        "name": "Fourth Floor",
+        "rooms": [
+          "SSG - CS cluster",
+          "LEARNING CENTRE DISCUSSION ROOM- 1 IV FLOOR",
+          "LEARNING CENTRE DISCUSSION ROOM- 2 IV FLOOR",
+          "LEARNING CENTRE CONFERENCE HALL - IV FLOOR"
+        ]
+      }
+    ],
+    "terms": [
+      "LC",
+      "learning centre"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "main-aduit",
+    "name": "Main Auditorium ",
+    "description": "",
+    "normX": 0.45,
+    "normY": 0.676,
+    "x": 1526,
+    "y": 2645,
+    "floors": [],
+    "terms": [
+      "auditorium",
+      "bit auditorium"
+    ],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "mechanic-back",
+    "name": "Mechanic Block",
+    "description": "Mechanic Block",
+    "normX": 0.731,
+    "normY": 0.547,
+    "x": 2480,
+    "y": 2140,
+    "floors": [
+      {
+        "name": "Base Floor",
+        "rooms": [
+          "Basic Workshop",
+          "Inventory Area"
+        ]
+      },
+      {
+        "rooms": [
+          "Special Machinery Shop",
+          "Strength of Materials Lab",
+          "Lathe Shop",
+          "Meteorology Lab",
+          "Fluid Mechanics Lab",
+          "AQUA SUB-BIT Research Lab",
+          "Thermal Engineering Lab",
+          "Kinematics & Dynamics lab"
+        ],
+        "name": "Ground floor"
+      },
+      {
+        "rooms": [
+          "Harita Lab (Computer Lab-19)",
+          "Computer Lab-20",
+          "Computer Lab-21",
+          "Computer Lab-22",
+          "Computer Lab-23",
+          "CAD lab (Computer Lab-24)",
+          "Computer Lab-25",
+          "Computer Lab-26",
+          "CT lab"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "Heat Transfer Lab",
+          "Industrial Safety Lab",
+          "Drawing Hall 1",
+          "Godrej Excellence centre",
+          "Unit Operation lab (Agricultural lab)",
+          "Automotive Electrical & Electronics lab",
+          "Renewable Energy & HVAC lab",
+          "Metallargy Lab"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "dept of mech"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "mechanic-front",
+    "name": "Mech Block Entrance",
+    "description": "Mechanic Block",
+    "normX": 0.649,
+    "normY": 0.562,
+    "x": 2201,
+    "y": 2199,
+    "floors": [
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Dept of Mech",
+          "Cyber Security Lab",
+          "Dept of Library",
+          "ME 001 (Industrial Safety engineering)",
+          "ME 002",
+          "ME 003",
+          "ME 004",
+          "ME 005",
+          "Smart classroom"
+        ]
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "ME 101",
+          "ME 102",
+          "ME 103",
+          "ME 104",
+          "ME 105",
+          "ME 106",
+          "ME 107",
+          "ME 108",
+          "Dept of AIDS",
+          "Computer lab-18"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "ME 201",
+          "ME 202",
+          "ME 203",
+          "ME 204",
+          "ME 205",
+          "ME 206",
+          "Faculty hall 1"
+        ]
+      },
+      {
+        "rooms": [
+          "Dept of Agriculture",
+          "ME 301",
+          "ME 302",
+          "ME 303",
+          "ME 304",
+          "ME 305",
+          "ME 306",
+          "Faculty hall 2"
+        ],
+        "name": "Third Floor"
+      }
+    ],
+    "terms": [
+      "school of mechanics",
+      "dept of mech",
+      "dept of aero",
+      "dept of agri"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "medical-center",
+    "name": "Medical Center",
+    "description": "",
+    "normX": 0.154,
+    "normY": 0.777,
+    "x": 522,
+    "y": 3040,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "narmadha-hostel",
+    "name": "Narmadha Hostel",
+    "description": "",
+    "normX": 0.166,
+    "normY": 0.848,
+    "x": 563,
+    "y": 3318,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "north-bhavani",
+    "name": "North Bhavani",
+    "description": "",
+    "normX": 0.393,
+    "normY": 0.894,
+    "x": 1333,
+    "y": 3498,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "pearl-hostel",
+    "name": "Pearl Hostel",
+    "description": "",
+    "normX": 0.903,
+    "normY": 0.896,
+    "x": 3063,
+    "y": 3506,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "placement-and-training",
+    "name": "Placement and Training Cell",
+    "description": "IB Block",
+    "normX": 0.356,
+    "normY": 0.694,
+    "x": 1208,
+    "y": 2716,
+    "floors": [
+      {
+        "rooms": [
+          "Dept of Training and Placement",
+          "Training & Placement Conference Hall 1",
+          "Training & Placement Conference Hall 2"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Vedhanayagam Auditorium"
+        ],
+        "name": "First Floor"
+      }
+    ],
+    "terms": [
+      "Placement"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "radio-centre",
+    "name": "Community Radio Centre",
+    "description": "",
+    "normX": 0.339,
+    "normY": 0.723,
+    "x": 1150,
+    "y": 2829,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "recreation-hall",
+    "name": "Recreation Hall",
+    "description": "Cafeteria",
+    "normX": 0.469,
+    "normY": 0.784,
+    "x": 1591,
+    "y": 3068,
+    "floors": [
+      {
+        "rooms": [
+          "Conventional Store",
+          "Gift Shop",
+          "Mobile Shop"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "name": "First Floor",
+        "rooms": [
+          "Recreation Hall"
+        ]
+      }
+    ],
+    "terms": [
+      "shop",
+      "store",
+      "gift",
+      "mobile"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "research park",
+    "name": "Research Park-Left Wing",
+    "description": "research park-left\n",
+    "normX": 0.635,
+    "normY": 0.31,
+    "x": 2154,
+    "y": 1213,
+    "floors": [
+      {
+        "rooms": [
+          "Alumni office"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          ""
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "student affairs"
+        ]
+      },
+      {
+        "name": "Third Floor",
+        "rooms": [
+          "MH 302",
+          "MH 303",
+          "MH 304",
+          "MH 305",
+          "MH 306"
+        ]
+      }
+    ],
+    "terms": [
+      "research park"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "research-park-right",
+    "name": "Research Park-Right wing",
+    "description": "Research Park-Right wing",
+    "normX": 0.636,
+    "normY": 0.409,
+    "x": 2157,
+    "y": 1600,
+    "floors": [
+      {
+        "name": "Third Floor",
+        "rooms": [
+          "AE 301",
+          "AE 302"
+        ]
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "Student Affairs"
+        ]
+      },
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "Principal Office"
+        ]
+      }
+    ],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "ruby-hostel",
+    "name": "Ruby Hostel",
+    "description": "",
+    "normX": 0.862,
+    "normY": 0.831,
+    "x": 2924,
+    "y": 3252,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "sapphire-hostel",
+    "name": "Sapphire Hostel",
+    "description": "",
+    "normX": 0.733,
+    "normY": 0.834,
+    "x": 2486,
+    "y": 3263,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "sf-block",
+    "name": "SF Block",
+    "description": "Sunflower Block",
+    "normX": 0.653,
+    "normY": 0.499,
+    "x": 2215,
+    "y": 1953,
+    "floors": [
+      {
+        "rooms": [
+          "SF B01",
+          "SF B02",
+          "SF B03",
+          "SF Seminar Hall 1",
+          "SF Seminar Hall 2",
+          "NSS office"
+        ],
+        "name": "Base Floor"
+      },
+      {
+        "name": "Ground Floor",
+        "rooms": [
+          "SF 101",
+          "SF 102",
+          "Department of Information Technology",
+          "AI Lab (computer lab-2)",
+          "IT Dept Discussion room"
+        ]
+      },
+      {
+        "rooms": [
+          "SF 101",
+          "SF 102",
+          "SF 103",
+          "Department of Computer Science and Engineering",
+          "Computer Lab-7",
+          "CSE Dept Discussion room"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "name": "Second Floor",
+        "rooms": [
+          "SF 201",
+          "SF 202",
+          "SF 203",
+          "SF Seminar Hall 3"
+        ]
+      }
+    ],
+    "terms": [
+      "dept of it",
+      "dept of cse",
+      "dept of aiml",
+      "SF Block",
+      "school of computing",
+      "sunflower block"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "sf-block-labs",
+    "name": "SF Block Labs",
+    "description": "Sunflower Block",
+    "normX": 0.733,
+    "normY": 0.491,
+    "x": 2486,
+    "y": 1921,
+    "floors": [
+      {
+        "rooms": [
+          "School Of Management Studies"
+        ],
+        "name": "Base Floor"
+      },
+      {
+        "rooms": [
+          "Data Mining Lab (computer lab-3)",
+          "Cloud Computing Lab (computer lab-4)",
+          "DBMS Lab (computer lab-5)",
+          "Programming Lab",
+          "Faculty Hall-5",
+          "Project Lab (computer lab-6)"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Computer Lab-10",
+          "Computer Lab-9",
+          "Computer Lab-8"
+        ],
+        "name": "First Floor"
+      },
+      {
+        "rooms": [
+          "AIML Labs",
+          "Computer Lab-12",
+          "Computer Lab-13",
+          "Computer Lab-14",
+          "Computer Lab-15"
+        ],
+        "name": "Second Floor"
+      }
+    ],
+    "terms": [
+      "sunflower block",
+      "labs"
+    ],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "shuttle-court",
+    "name": "Shuttle Court",
+    "description": "",
+    "normX": 0.261,
+    "normY": 0.352,
+    "x": 885,
+    "y": 1377,
+    "floors": [],
+    "terms": [
+      "shuttle court",
+      "badminton court"
+    ],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "south-bhavani",
+    "name": "South Bhavani",
+    "description": "",
+    "normX": 0.399,
+    "normY": 0.948,
+    "x": 1353,
+    "y": 3710,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "spinning-lab",
+    "name": "Spinning Lab",
+    "description": "AS Block",
+    "normX": 0.54,
+    "normY": 0.68,
+    "x": 1832,
+    "y": 2661,
+    "floors": [
+      {
+        "rooms": [
+          "Spinning Lab"
+        ],
+        "name": "Ground Floor"
+      },
+      {
+        "rooms": [
+          "Spinning Lab"
+        ],
+        "name": "First Floor"
+      }
+    ],
+    "terms": [],
+    "iconCode": 57627,
+    "colorValue": 4280391411
+  },
+  {
+    "id": "tenniscourt-1",
+    "name": "Tennis Court 1",
+    "description": "",
+    "normX": 0.534,
+    "normY": 0.844,
+    "x": 1811,
+    "y": 3303,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "tenniscourt-2",
+    "name": "Tennis Court 2",
+    "description": "",
+    "normX": 0.57,
+    "normY": 0.843,
+    "x": 1933,
+    "y": 3299,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "testing-1",
+    "name": "agri ground",
+    "description": "",
+    "normX": 0.461,
+    "normY": 0.177,
+    "x": 1564,
+    "y": 693,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "volleyball-court",
+    "name": "Volleyball Court ",
+    "description": "",
+    "normX": 0.461,
+    "normY": 0.845,
+    "x": 1564,
+    "y": 3306,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  },
+  {
+    "id": "yamuna-hostel",
+    "name": "Yamuna Hostel",
+    "description": "",
+    "normX": 0.383,
+    "normY": 0.839,
+    "x": 1299,
+    "y": 3283,
+    "floors": [],
+    "terms": [],
+    "iconCode": 58283,
+    "colorValue": 4294198070
+  }
+]
