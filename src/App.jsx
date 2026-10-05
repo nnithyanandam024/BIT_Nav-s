@@ -137,19 +137,44 @@ export default function App() {
       // Backend unavailable, fallback to client NLP engine seamlessly
     }
 
-    // Client-side NLP & routing execution
-    const aiParsed = await processNaturalLanguageQuery(query, campusData.landmarks, apiKey);
+    // Client-side Gemini / NLP & routing execution
+    const aiParsed = await processNaturalLanguageQuery(query, campusData.landmarks, apiKey, chatHistory);
     let routeResult = null;
     let nearestResult = null;
     let matchingPlaces = [];
 
-    if (aiParsed.intent === 'navigate') {
+    // Handle Map View Switching from Voice or Text
+    if (aiParsed.intent === 'toggle_map') {
+      if (aiParsed.mapMode === 'satellite') {
+        setIsSatellite(true);
+      } else if (aiParsed.mapMode === 'standard') {
+        setIsSatellite(false);
+      }
+    } else if (aiParsed.intent === 'find_room' && aiParsed.roomDetails) {
+      const target = campusData.landmarks.find(l => l.id === aiParsed.roomDetails.placeId) ||
+                     campusData.landmarks.find(l => l.id === aiParsed.destination);
+      if (target) {
+        matchingPlaces = [target];
+        setSelectedPlace(target);
+        const origin = startPlace || campusData.landmarks.find(l => l.id === 'as-main-left') || campusData.landmarks[0];
+        const route = dijkstra(origin.nearestNode, target.nearestNode, campusData.graph, campusData.nodes);
+        if (route) {
+          const turnByTurn = generateTurnByTurn(route.pathNodes, campusData.nodes, campusData.landmarks, origin, target);
+          routeResult = { from: origin, to: target, route, turnByTurn };
+          setStartPlace(origin);
+          setDestinationPlace(target);
+          setActiveRoute(routeResult);
+        }
+      }
+    } else if (aiParsed.intent === 'navigate') {
       const from = campusData.landmarks.find(l => l.id === aiParsed.source) ||
-                   campusData.landmarks.find(l => l.id === 'main_gate');
+                   startPlace ||
+                   campusData.landmarks.find(l => l.id === 'as-main-left') ||
+                   campusData.landmarks[0];
       const to = campusData.landmarks.find(l => l.id === aiParsed.destination);
 
       if (from && to) {
-        const route = dijkstra(from.nearestNode, to.nearestNode, campusData.graph, campusData.nodes, campusData.edgeMap);
+        const route = dijkstra(from.nearestNode, to.nearestNode, campusData.graph, campusData.nodes);
         if (route) {
           const turnByTurn = generateTurnByTurn(route.pathNodes, campusData.nodes, campusData.landmarks, from, to);
           routeResult = { from, to, route, turnByTurn };
@@ -159,9 +184,9 @@ export default function App() {
         }
       }
     } else if (aiParsed.intent === 'nearest_facility') {
-      const sourceId = aiParsed.source || 'central_library';
-      const type = aiParsed.facility_type || 'computer_lab';
-      nearestResult = findNearestFacility(sourceId, type, campusData.landmarks, campusData.graph, campusData.nodes, campusData.edgeMap);
+      const sourcePlaceObj = campusData.landmarks.find(l => l.id === aiParsed.source) || startPlace || campusData.landmarks[0];
+      const type = aiParsed.facility_type || 'canteen';
+      nearestResult = findNearestFacility(sourcePlaceObj.id, type, campusData.landmarks, campusData.graph, campusData.nodes);
       if (nearestResult) {
         routeResult = {
           from: nearestResult.source,
@@ -178,16 +203,14 @@ export default function App() {
       if (target) {
         matchingPlaces = [target];
         setSelectedPlace(target);
-        const gate = campusData.landmarks.find(l => l.id === 'main_gate');
-        if (gate) {
-          const route = dijkstra(gate.nearestNode, target.nearestNode, campusData.graph, campusData.nodes, campusData.edgeMap);
-          if (route) {
-            const turnByTurn = generateTurnByTurn(route.pathNodes, campusData.nodes, campusData.landmarks, gate, target);
-            routeResult = { from: gate, to: target, route, turnByTurn };
-            setStartPlace(gate);
-            setDestinationPlace(target);
-            setActiveRoute(routeResult);
-          }
+        const origin = startPlace || campusData.landmarks.find(l => l.id === 'as-main-left') || campusData.landmarks[0];
+        const route = dijkstra(origin.nearestNode, target.nearestNode, campusData.graph, campusData.nodes);
+        if (route) {
+          const turnByTurn = generateTurnByTurn(route.pathNodes, campusData.nodes, campusData.landmarks, origin, target);
+          routeResult = { from: origin, to: target, route, turnByTurn };
+          setStartPlace(origin);
+          setDestinationPlace(target);
+          setActiveRoute(routeResult);
         }
       }
     } else if (aiParsed.intent === 'list_facilities' && aiParsed.facility_type) {

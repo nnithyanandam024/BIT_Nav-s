@@ -14,15 +14,20 @@ import {
   MapPin,
   X,
   SlidersHorizontal,
-  Bot
+  Bot,
+  Building,
+  Compass,
+  Play,
+  Sparkles
 } from 'lucide-react';
 
 const SAMPLE_PROMPTS = [
-  "How do I get from Main Gate to Central Library?",
-  "Where is CS 109 lab in AS Block?",
-  "Take me from Main Gate to Main Auditorium",
-  "How do I reach Cafeteria from Mech Block?",
-  "Where is Cauvery Hostel?"
+  "Where is Mechatronics Lab?",
+  "Take me to Main Auditorium",
+  "Switch to satellite view",
+  "Find nearest Canteen",
+  "Where is ECE Seminar Hall?",
+  "Route from Cauvery Hostel to Sports Ground"
 ];
 
 export default function AIAssistant({
@@ -122,7 +127,7 @@ export default function AIAssistant({
     setIsLoading(true);
 
     try {
-      const result = await onProcessAIQuery(query);
+      const result = await onProcessAIQuery(query, messages);
       const assistantMsg = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
@@ -131,6 +136,7 @@ export default function AIAssistant({
         routeResult: result.routeResult,
         nearestResult: result.nearestResult,
         matchingPlaces: result.matchingPlaces,
+        destinationPlace: result.routeResult?.to || result.aiParsed?.destPlace || null,
         timestamp: new Date()
       };
 
@@ -338,21 +344,83 @@ export default function AIAssistant({
                     }}>
                       {msg.text}
 
-                      {/* Intent pill */}
+                      {/* Room/Lab Match Card */}
+                      {msg.aiParsed?.roomDetails && (
+                        <div style={{
+                          marginTop: 8,
+                          padding: '7px 9px',
+                          background: 'rgba(92, 225, 230, 0.08)',
+                          border: '1px solid rgba(92, 225, 230, 0.25)',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '0.72rem'
+                        }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, color: 'var(--color-accent)' }}>
+                            <Building size={13} />
+                            <span>{msg.aiParsed.roomDetails.roomName}</span>
+                          </div>
+                          <div style={{ color: 'var(--text-secondary)', fontSize: '0.66rem', marginTop: 2 }}>
+                            {msg.aiParsed.roomDetails.floorName} • {msg.aiParsed.roomDetails.building}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Route Summary Card */}
+                      {msg.routeResult?.route && (
+                        <div style={{
+                          marginTop: 8,
+                          padding: '7px 9px',
+                          background: 'rgba(43, 174, 114, 0.1)',
+                          border: '1px solid rgba(43, 174, 114, 0.25)',
+                          borderRadius: 'var(--radius-sm)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between'
+                        }}>
+                          <div style={{ display: 'flex', gap: 5 }}>
+                            <span className="minimal-badge" style={{ fontSize: '0.62rem' }}>
+                              {msg.routeResult.route.totalDistance}m
+                            </span>
+                            <span className="minimal-badge" style={{ fontSize: '0.62rem' }}>
+                              ~{msg.routeResult.route.walkingMinutes} min
+                            </span>
+                          </div>
+                          <button
+                            onClick={() => speakInstruction(`Route to ${msg.routeResult.to?.name}. ${msg.routeResult.route.totalDistance} meters, about ${msg.routeResult.route.walkingMinutes} minutes.`)}
+                            className="minimal-btn"
+                            title="Read Directions"
+                            style={{ padding: '2px 6px', fontSize: '0.65rem', gap: 3 }}
+                          >
+                            <Volume2 size={11} /> Speak
+                          </button>
+                        </div>
+                      )}
+
+                      {/* Intent & AI Engine Pill */}
                       {msg.aiParsed && (
                         <div style={{
                           marginTop: 6,
                           paddingTop: 6,
                           borderTop: '1px solid rgba(255,255,255,0.06)',
                           display: 'flex',
+                          alignItems: 'center',
                           flexWrap: 'wrap',
                           gap: 4
                         }}>
                           <span className="minimal-badge" style={{ fontSize: '0.6rem' }}>
                             {msg.aiParsed.intent}
                           </span>
-                          <span className="minimal-badge" style={{ fontSize: '0.6rem' }}>
-                            {msg.aiParsed.engine}
+                          <span className="minimal-badge" style={{ fontSize: '0.6rem', display: 'inline-flex', alignItems: 'center', gap: 3 }}>
+                            {msg.aiParsed.engine?.includes('Gemini') ? (
+                              <>
+                                <Sparkles size={10} color="var(--color-accent)" />
+                                {msg.aiParsed.engine}
+                              </>
+                            ) : (
+                              <>
+                                <Navigation2 size={10} />
+                                {msg.aiParsed.engine}
+                              </>
+                            )}
                           </span>
                         </div>
                       )}

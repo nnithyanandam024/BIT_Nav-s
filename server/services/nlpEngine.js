@@ -1,48 +1,79 @@
-// AI NLP Engine for Campus Navigation - Server Module
-import dotenv from 'dotenv';
-dotenv.config();
+// AI NLP Engine for Campus Navigation
+// Powered by Google Gemini 2.5 Flash + Offline Semantic Grounding & RAG
+// Supports Multi-Turn Chat, Room & Lab Directory, Function Calling & Map Controls
 
-export async function processNaturalLanguageQuery(query, landmarks, apiKey = process.env.GEMINI_API_KEY) {
+export async function processNaturalLanguageQuery(query, landmarks, apiKey = null, chatHistory = []) {
   const trimmed = query.trim();
 
+  // 1. Try Google Gemini 2.5 Flash API if key is present
   if (apiKey) {
     try {
-      const geminiResult = await callGeminiLLM(trimmed, landmarks, apiKey);
+      const geminiResult = await callGeminiLLM(trimmed, landmarks, apiKey, chatHistory);
       if (geminiResult && geminiResult.intent) {
         return geminiResult;
       }
     } catch (err) {
-      console.warn('Gemini API call failed, falling back to local NLP engine:', err.message);
+      console.warn('Gemini 2.5 Flash call failed, falling back to local semantic engine:', err.message);
     }
   }
 
-  return localSemanticParse(trimmed, landmarks);
+  // 2. Built-in Deterministic Semantic Understanding Engine with 385 Room/Lab RAG
+  return localSemanticParse(trimmed, landmarks, chatHistory);
 }
 
-async function callGeminiLLM(query, landmarks, apiKey) {
-  const landmarkList = landmarks.map(l => ({
+// Call Google Gemini API (Gemini 2.5 Flash)
+async function callGeminiLLM(query, landmarks, apiKey, chatHistory = []) {
+  // Compress landmarks for lightweight prompt context
+  const landmarkSummary = landmarks.map(l => ({
     id: l.id,
     name: l.name,
     category: l.category,
-    type: l.type,
-    aliases: l.aliases
+    building: l.building,
+    floor: l.floor,
+    roomCount: l.rooms?.length || 0,
+    sampleRooms: (l.rooms || []).slice(0, 4).map(r => r.roomName),
+    aliases: (l.aliases || []).slice(0, 5)
   }));
 
-  const systemInstruction = `You are the AI Campus Navigation Assistant for Bannari Amman Institute of Technology (BIT), Sathyamangalam (HACKSPACE 2026).
-Your job is to understand natural language user queries about campus navigation and return a structured JSON response.
+  const systemInstruction = `You are the AI Campus Navigation Assistant for Bannari Amman Institute of Technology (BIT), Sathyamangalam.
+You help students, faculty, and visitors find their way across campus, discover laboratories, classrooms, departments, sports facilities, canteens, and hostels.
 
-Verified Campus Locations:
-${JSON.stringify(landmarkList, null, 2)}
+BIT CAMPUS VERIFIED LANDMARKS & DIRECTORY:
+${JSON.stringify(landmarkSummary)}
 
-Identify the user's intent and extract entities:
-- "intent": One of ["navigate", "nearest_facility", "find_place", "list_facilities", "campus_info"]
-- "source": The ID of the source location if mentioned (e.g. "main_gate", "central_library"), or null
-- "destination": The ID of the destination location if mentioned, or null
-- "facility_type": If asking for nearest or list, the type/category (e.g. "computer_lab", "canteen", "atm", "hostel", "sports", "medical", "library", "auditorium")
-- "preference": "fastest", "nearest", or "accessible"
-- "conversational_response": A friendly, polite explanation of what you are doing.
+AVAILABLE CAPABILITIES & ACTIONS:
+1. "navigate": User wants walking directions between two places or to a destination.
+2. "find_room": User is asking about a specific classroom, laboratory, seminar hall, or department (e.g., "Where is Mechatronics Lab?", "Where is CS 109?", "AIDS Dept").
+3. "nearest_facility": User is looking for the closest canteen, cafeteria, sports court, ATM, hostel, or lab.
+4. "list_facilities": User asks to list or show all places in a category (e.g., "show all canteens", "list sports grounds").
+5. "toggle_map": User asks to change map view (e.g., "switch to satellite view", "show standard map", "toggle satellite").
+6. "campus_info": General questions about the campus, operating hours, amenities.
 
-Return ONLY a valid JSON object without markdown fences.`;
+YOUR TASK:
+Analyze the user's message in context of previous messages and return a single valid JSON object without markdown fences with these fields:
+- "intent": "navigate" | "find_room" | "nearest_facility" | "list_facilities" | "toggle_map" | "campus_info"
+- "source": Source landmark ID if mentioned (e.g. "as-main-left", "mechanic-front"), or null
+- "destination": Destination landmark ID if mentioned or inferred, or null
+- "facility_type": "canteen" | "atm" | "medical" | "hostel" | "sports" | "labs" | "academic" | "gates"
+- "roomDetails": If asking about a room/lab, object with { "roomName": string, "floorName": string, "placeId": string, "building": string } or null
+- "mapMode": "satellite" | "standard" (only for toggle_map)
+- "conversational_response": A friendly, helpful, concise message answering the user and explaining the navigation or map action taken.`;
+
+  // Build multi-turn contents array
+  const contents = [];
+  
+  // Append recent chat history (up to last 6 turns)
+  const recentHistory = chatHistory.slice(-6);
+  for (const msg of recentHistory) {
+    if (msg.role === 'user') {
+      contents.push({ role: 'user', parts: [{ text: msg.text }] });
+    } else if (msg.role === 'assistant' && msg.text) {
+      contents.push({ role: 'model', parts: [{ text: msg.text }] });
+    }
+  }
+
+  // Current user query
+  contents.push({ role: 'user', parts: [{ text: query }] });
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
@@ -50,7 +81,7 @@ Return ONLY a valid JSON object without markdown fences.`;
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: `User Query: "${query}"` }] }],
+      contents,
       systemInstruction: { parts: [{ text: systemInstruction }] },
       generationConfig: {
         responseMimeType: 'application/json',
@@ -69,17 +100,124 @@ Return ONLY a valid JSON object without markdown fences.`;
 
   const parsed = JSON.parse(text);
   parsed.engine = 'Google Gemini 2.5 Flash';
+
+  // Attach matched landmark objects if IDs present
+  if (parsed.source) {
+    parsed.sourcePlace = landmarks.find(l => l.id === parsed.source) || null;
+  }
+  if (parsed.destination) {
+    parsed.destPlace = landmarks.find(l => l.id === parsed.destination) || null;
+  }
+
   return parsed;
 }
 
-export function localSemanticParse(query, landmarks) {
-  const q = query.toLowerCase();
+// Local Semantic NLP Parser with 385 Rooms/Labs RAG & Multi-Turn Context
+export function localSemanticParse(query, landmarks, chatHistory = []) {
+  const q = query.toLowerCase().trim();
 
+  // 1. Detect Map View Toggle Commands
+  if (/(switch to|show|turn on|enable|view)\s+(satellite|aerial|satellite view|photo)/i.test(q)) {
+    return {
+      engine: 'Built-in Campus NLP',
+      intent: 'toggle_map',
+      mapMode: 'satellite',
+      conversational_response: "Switching to the authentic Satellite Aerial View of BIT campus."
+    };
+  }
+  if (/(switch to|show|turn on|enable|view)\s+(standard|map|vector|schematic|default|normal)/i.test(q)) {
+    return {
+      engine: 'Built-in Campus NLP',
+      intent: 'toggle_map',
+      mapMode: 'standard',
+      conversational_response: "Switching back to the clean Standard Physical Campus Map."
+    };
+  }
+
+  // 2. Multi-turn Follow-up Context ("take me there", "how to reach there", "directions to it")
+  let contextDestination = null;
+  if (/(there|to it|from here|directions|route|take me)/i.test(q)) {
+    for (let i = chatHistory.length - 1; i >= 0; i--) {
+      const prevMsg = chatHistory[i];
+      if (prevMsg.destinationPlace) {
+        contextDestination = prevMsg.destinationPlace;
+        break;
+      }
+      if (prevMsg.aiParsed?.destPlace) {
+        contextDestination = prevMsg.aiParsed.destPlace;
+        break;
+      }
+    }
+  }
+
+  // 3. Search All 385 Rooms and Laboratories with Stop-Word Filtering & Scoring
+  const stopWords = new Set(['dept', 'of', 'the', 'lab', 'labs', 'room', 'hall', 'centre', 'center', 'technology', 'engineering', 'in', 'at']);
+  const cleanQ = q.replace(/where is|where's|find|locate|search for|how to get to|take me to|show me/g, '').trim();
+  const qWords = cleanQ.split(/\s+/).filter(w => w.length > 2 && !stopWords.has(w));
+
+  let foundRoom = null;
+  let maxScore = 0;
+
+  if (qWords.length > 0) {
+    for (const lm of landmarks) {
+      for (const f of lm.floors || []) {
+        for (const r of f.rooms || []) {
+          if (!r || !r.trim()) continue;
+          const rLower = r.toLowerCase().trim();
+          // Direct containment
+          if (cleanQ.length > 3 && (q.includes(rLower) || rLower.includes(cleanQ))) {
+            foundRoom = {
+              roomName: r,
+              floorName: f.name,
+              placeId: lm.id,
+              building: lm.name
+            };
+            break;
+          }
+          // Keyword score
+          const rWords = rLower.split(/\s+/).filter(w => w.length > 2 && !stopWords.has(w));
+          let matchCount = 0;
+          for (const qw of qWords) {
+            if (rWords.some(rw => rw.includes(qw) || qw.includes(rw))) matchCount++;
+          }
+          if (matchCount > maxScore && matchCount >= 1) {
+            maxScore = matchCount;
+            foundRoom = {
+              roomName: r,
+              floorName: f.name,
+              placeId: lm.id,
+              building: lm.name
+            };
+          }
+        }
+        if (foundRoom && maxScore >= qWords.length) break;
+      }
+      if (foundRoom && maxScore >= qWords.length) break;
+    }
+  }
+
+  // If a specific room/lab was matched:
+  if (foundRoom) {
+    const destPlace = landmarks.find(l => l.id === foundRoom.placeId) || landmarks[0];
+    const sourcePlace = landmarks.find(l => l.id === 'as-main-left') || landmarks[0];
+    return {
+      engine: 'Built-in Campus NLP (Directory Search)',
+      intent: 'find_room',
+      roomDetails: foundRoom,
+      source: sourcePlace.id,
+      sourcePlace,
+      destination: destPlace.id,
+      destPlace,
+      conversational_response: `${foundRoom.roomName} is located on the ${foundRoom.floorName} of ${foundRoom.building}. I have marked its physical doorway on the map and prepared your walking route.`
+    };
+  }
+
+  // 4. Detect Intent
   let intent = 'find_place';
   let preference = 'standard';
   let facilityType = null;
   let sourcePlace = null;
-  let destPlace = null;
+  let destPlace = contextDestination || null;
 
   if (/nearest|closest|nearby|closest to|nearest to/i.test(q)) {
     intent = 'nearest_facility';
@@ -92,16 +230,14 @@ export function localSemanticParse(query, landmarks) {
     intent = 'find_place';
   }
 
+  // 5. Facility Type Detection
   const typeKeywords = [
-    { type: 'computer_lab', regex: /computer\s*lab|comp\s*lab|cs\s*lab|coding\s*lab|software\s*lab|programming\s*lab|ai\s*lab|data\s*science\s*lab/i },
-    { type: 'canteen', regex: /canteen|cafeteria|food\s*court|eatery|snacks|juice|coffee|tea|lunch|breakfast|dinner|meat\s*and\s*eat/i },
-    { type: 'atm', regex: /atm|cash|bank|money|withdrawal|canara\s*bank/i },
-    { type: 'medical', regex: /medical|hospital|clinic|doctor|first\s*aid|dispensary|health\s*centre|ambulance/i },
-    { type: 'hostel', regex: /hostel|dorm|dormitory|residence|mess/i },
-    { type: 'library', regex: /library|knowledge\s*centre|books|reading\s*room/i },
-    { type: 'auditorium', regex: /auditorium|audi|convention\s*hall|seminar\s*hall/i },
-    { type: 'sports', regex: /sports|ground|cricket|football|gym|gymnasium|badminton|court|tennis|track/i },
-    { type: 'parking', regex: /parking|bus\s*bay|bike\s*parking|car\s*parking/i }
+    { type: 'canteen', regex: /canteen|cafeteria|food\s*court|eatery|snacks|juice|coffee|tea|lunch|breakfast|dinner|meat\s*and\s*eat|mess/i },
+    { type: 'labs', regex: /lab|laboratory|coding|software|mechatronics|aids|integrated\s*automation|spinning|physics|chemistry/i },
+    { type: 'hostel', regex: /hostel|dorm|dormitory|residence|cauvery|coral|diamond|emerald|ganga|narmadha|pearl|ruby|sapphire|yamuna|bhavani/i },
+    { type: 'sports', regex: /sports|ground|cricket|football|gym|gymnasium|court|tennis|volleyball|basketball|shuttle|agri\s*ground/i },
+    { type: 'academic', regex: /as\s*block|ib\s*block|mech\s*block|sf\s*block|auditorium|audi|lc|library|knowledge\s*centre/i },
+    { type: 'amenity', regex: /medical|hospital|clinic|doctor|first\s*aid|dispensary|radio|placement|recreation/i }
   ];
 
   for (const tk of typeKeywords) {
@@ -111,19 +247,12 @@ export function localSemanticParse(query, landmarks) {
     }
   }
 
+  // 6. Extract Source and Destination Entities
   const fromToMatch = q.match(/from\s+([a-z0-9\s&'-]+?)\s+(?:to|towards)\s+([a-z0-9\s&'-]+)/i);
   if (fromToMatch) {
     sourcePlace = matchPlace(fromToMatch[1].trim(), landmarks);
     destPlace = matchPlace(fromToMatch[2].trim(), landmarks);
     intent = 'navigate';
-  }
-
-  const nearPattern = q.match(/(?:i'm\s+at|i\s+am\s+at|near|from|starting\s+at)\s+([a-z0-9\s&'-]+?)(?:\.|\?|,|\s+where|\s+find|\s+how|\s+take|$)/i);
-  if (nearPattern && !sourcePlace) {
-    const candidateSource = matchPlace(nearPattern[1].trim(), landmarks);
-    if (candidateSource) {
-      sourcePlace = candidateSource;
-    }
   }
 
   if (!destPlace) {
@@ -141,30 +270,31 @@ export function localSemanticParse(query, landmarks) {
     }
   }
 
+  // Default fallbacks to authentic landmark
+  const defaultBase = landmarks.find(l => l.id === 'as-main-left') || landmarks[0];
   if (intent === 'navigate' && destPlace && !sourcePlace) {
-    sourcePlace = landmarks.find(l => l.id === 'main_gate');
+    sourcePlace = defaultBase;
   }
-
   if (intent === 'nearest_facility' && !sourcePlace) {
-    sourcePlace = landmarks.find(l => l.id === 'central_library');
+    sourcePlace = defaultBase;
   }
 
+  // 7. Human Conversational Response
   let responseText = '';
   if (intent === 'nearest_facility' && facilityType) {
-    const formattedType = facilityType.replace('_', ' ');
-    responseText = `Finding the nearest ${formattedType} from ${sourcePlace ? sourcePlace.name : 'the Central Library'}.`;
+    responseText = `Finding the closest ${facilityType} facility starting from ${sourcePlace ? sourcePlace.name : 'your location'}.`;
   } else if (intent === 'navigate' && sourcePlace && destPlace) {
-    responseText = `Calculating the optimal walking route from ${sourcePlace.name} to ${destPlace.name}.`;
+    responseText = `Calculating the direct road path from ${sourcePlace.name} to ${destPlace.name} along the blue campus walkways.`;
   } else if (destPlace) {
-    responseText = `${destPlace.name} is located at ${destPlace.building}, ${destPlace.floor}. Here is the navigation route.`;
+    responseText = `${destPlace.name} is located at ${destPlace.building}, ${destPlace.floor}. Here is how to navigate there.`;
   } else if (intent === 'list_facilities' && facilityType) {
-    responseText = `Here are the campus ${facilityType.replace('_', ' ')} facilities available at Bannari Amman Institute of Technology.`;
+    responseText = `Here are the verified campus ${facilityType} locations at Bannari Amman Institute of Technology.`;
   } else {
-    responseText = `I'm your AI Campus Navigation Assistant for BIT Sathyamangalam. You can ask me how to get to any block, find the nearest lab or canteen, or locate any campus facility.`;
+    responseText = `I'm your AI Campus Navigation Assistant for BIT Sathyamangalam. You can ask me for walking routes, find any lab or department, locate hostels and canteens, or switch between Map and Satellite view.`;
   }
 
   return {
-    engine: 'Built-in Campus Semantic NLP',
+    engine: 'Built-in Campus NLP',
     intent,
     preference,
     source: sourcePlace ? sourcePlace.id : null,
@@ -176,23 +306,27 @@ export function localSemanticParse(query, landmarks) {
   };
 }
 
+// Semantic Place Matcher
 export function matchPlace(str, landmarks) {
   if (!str) return null;
   const clean = str.toLowerCase().replace(/the|to|a|an|at|near|block|hall/g, '').trim();
 
+  // 1. Exact alias match
   for (const lm of landmarks) {
     if (lm.name.toLowerCase() === str || lm.shortName.toLowerCase() === str) return lm;
-    if (lm.aliases.includes(str)) return lm;
+    if ((lm.aliases || []).includes(str)) return lm;
   }
 
+  // 2. Contains match
   for (const lm of landmarks) {
-    for (const a of lm.aliases) {
+    for (const a of (lm.aliases || [])) {
       if (str.includes(a) || a.includes(str)) return lm;
     }
   }
 
+  // 3. Keyword match
   for (const lm of landmarks) {
-    const target = (lm.name + ' ' + lm.shortName + ' ' + lm.aliases.join(' ')).toLowerCase();
+    const target = (lm.name + ' ' + lm.shortName + ' ' + (lm.aliases || []).join(' ')).toLowerCase();
     if (target.includes(clean)) return lm;
   }
 
